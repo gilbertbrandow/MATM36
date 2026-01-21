@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{amsthm}
+\title{Topology: Exercises 1}
+\author{Simon Gustafsson}
+\date{}
+\begin{document}
+\maketitle
+\section*{Problem 1}
+\begin{proof}
+($\Rightarrow$) Assume there is a bijection $h:A\to B$.
+Since $A$ countable, there exists $f:A\to C \subseteq \mathbb N$. Let
+$g:=f\circ h^{-1}:B\to C$. Since composition preserves bijections, $g$ is a bijection. Implying cardinality of $B$ and $A$ determined by $C$.
+Hence $A$ and $B$ have the same cardinality.
+
+($\Leftarrow$) Assume $A$ and $B$ have the same cardinality.
+Then there exists a set $C \subseteq \mathbb N$ and bijections $f:A\to C$ and $g:B\to C$. Define \(h:=g^{-1}\circ f:A\to B.\)
+Since $f$ and $g$ are bijections, $h$ is a bijection. \qedhere
+\end{proof}
+\end{document}
