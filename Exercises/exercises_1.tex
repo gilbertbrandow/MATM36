@@ -26,4 +26,14 @@ so they have the same cardinality.
 Then there exists a set $C \subseteq \mathbb N$ and bijections $f:A\to C$ and $g:B\to C$. Define \(h:=g^{-1}\circ f:A\to B.\)
 Since $f$ and $g$ are bijections, $h$ is a bijection. \qedhere
 \end{proof}
+
+\section*{Problem 2}
+\begin{proof}
+    Let $k \in \mathbb N$, Choose $p_1, p_2, ..., p_k$ prime. Consider: 
+    \[
+        f: \mathbb N^k \to \mathbb N, \hspace{0.5cm}  (n_1, ... n_k) \mapsto p_1^{n_1} ... p_k^{n_k}. 
+    \]
+    Let $x, y \in \mathbb N^k$ such that $f(x) = f(y) \implies p_1^{x_1}...p_2^{x_k} = p_1^{y_1}...p_2^{y_k}$. 
+    For each $i \in \{1, ..., k\}$, since $p_i$ prime $p_i \mid p_j \Leftrightarrow  i = j$. Which in turn implies $p_i^{x_i} = p_i^{y_i} \implies x_i = y_i$. Hence, $x = y$, since $x, y$ arbitrary, $f$ injective. By Theorem 7.1, Topology, Munkres, J.R, $\mathbb N^k$ countable.
+\end{proof}
 \end{document}

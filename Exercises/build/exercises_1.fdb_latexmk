@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1768990692.42894 "/Users/simongustafsson/Desktop/Bachelors in Mathematics/MATM36/Exercises/exercises_1.tex" "build/exercises_1.pdf" "exercises_1" 1768990692.98643 0
-  "/Users/simongustafsson/Desktop/Bachelors in Mathematics/MATM36/Exercises/exercises_1.tex" 1768990692.24075 1121 b2406024b8dc372fab09e160829969ca ""
+["pdflatex"] 1768992361.63528 "/Users/simongustafsson/Desktop/Bachelors in Mathematics/MATM36/Exercises/exercises_1.tex" "build/exercises_1.pdf" "exercises_1" 1768992362.17045 0
+  "/Users/simongustafsson/Desktop/Bachelors in Mathematics/MATM36/Exercises/exercises_1.tex" 1768992361.43943 1750 f938cfd6b5c1ae9d0a3cdfe0b484a040 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -23,8 +23,11 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
@@ -91,9 +94,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1725786739.30054 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1725786567 8221431 0e3ed4c0ce3a607b82f78dc061b52468 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "build/exercises_1.aux" 1768990692.92042 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
-  "build/exercises_1.out" 1768990692.77048 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "exercises_1.tex" 1768990692.24075 1121 b2406024b8dc372fab09e160829969ca ""
+  "build/exercises_1.aux" 1768992362.11693 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
+  "build/exercises_1.out" 1768992361.96807 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "exercises_1.tex" 1768992361.43943 1750 f938cfd6b5c1ae9d0a3cdfe0b484a040 ""
   (generated)
   "build/exercises_1.aux"
   "build/exercises_1.log"
