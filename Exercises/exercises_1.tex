@@ -99,5 +99,19 @@ To see $f$ is injective, suppose $f(x)=f(y)$. Then for each $k\in\mathbb N$,
 we have $x_k=1 \iff k\in f(x)=f(y)\iff y_k=1$, hence $x_k=y_k$. So $x=y$.
 For surjectivity, let $B\subseteq\mathbb N$ and define $x\in\{0,1\}^{\mathbb N}$ by
 $x_k=\mathbf 1_{\{k\in B\}}$. Then $f(x)=B$. Thus $f$ is bijective.
+\\
+\\
+\textbf{d: } Suppose for contradiction that $\mathcal P(\mathbb N)$ is countable.
+Then there is a list $B_1,B_2,B_3,\dots$ of all subsets of $\mathbb N$.
+Define
+\[
+D=\{\,n\in\mathbb N \mid n\notin B_n\,\}.
+\]
+Then $D\subseteq\mathbb N$, so $D\in\mathcal P(\mathbb N)$, hence $D=B_m$ for some $m$.
+But then
+\[
+m\in D \iff m\notin B_m \iff m\notin D,
+\]
+a contradiction. Therefore $\mathcal P(\mathbb N)$ is uncountable.
 
 \end{document}
