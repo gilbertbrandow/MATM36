@@ -62,4 +62,27 @@ $h:\mathbb{N} \to \mathbb{Z}\times(\mathbb{Z}\setminus\{0\})$.
 Then $g\circ h:\mathbb{N}\to\mathbb{Q}$ is a surjection, so $\mathbb{Q}$ is countable. Therefore $\mathbb{Q}$ is countably infinite.
 \end{proof}
 
+\section*{Problem 4}
+\textbf{a: }
+Label all elements in $A = \{a_1, \cdots, a_n\}$. Let $f: \{0, 1\}^n \to \mathcal{P(A)}$, $(x_1, \cdots, x_n)  \mapsto  \{a_i \in A \ | \ x_i = 1\} $. Let $\mathbf{x}, \mathbf{y} \in \{0, 1\}^n $. Let $f(\mathbf{x}) = f(\mathbf{y}) = \{a_{i_1}, \cdots, a_{i_m}\} \subseteq A$. 
+This implies, for each $j \in \{1, \cdots, n\} $:
+\begin{equation}
+  x_j=y_j=\left\{
+  \begin{array}{@{}ll@{}}
+    1, & \text{if}\ j \in \{i_1, \cdots, i_m\} \\
+    0, & \text{otherwise}
+  \end{array}\right .
+\end{equation} 
+Hence $\mathbf{x} = \mathbf{y}$, and since they were arbitrary, $f$ injective. \\
+Let $B = \{a_{i_1}, \cdots,  a_{i_m}\} \subseteq A$. Since $B$, subset $m \leq n$. Define $\mathbf{x}$ such that $x_j = \mathbf{1}_{\{j \in \{i_1, \cdot, i_m\}\}}$. 
+Then $f(\mathbf{x}) = B$, since $B$ arbitrary $f$ surjective and therefore bijective.
+\\
+\\
+\textbf{b: } Since for any set $A$, there exists a bijective $f: \{0, 1\}^n \to \mathcal{P(A)}$. 
+Consider 
+\[
+g: \{0, 1\}^n \to \{1, \cdots, 2^n\}, \ (x_1, \cdots, x_n) \mapsto \left(\sum_{k = 0}^{n}2^kx_{k-1}\right) - 1 
+\] 
+$g$ is clearly bijective.
+Let $h := f \circ g: \mathcal{P(A)} \to \{1, \cdots, 2^n\}$, since compositions preserves bijections, $h$ is a bijection and therefore card $\mathcal{P(A)} = 2^{\text{card}A}$
 \end{document}
