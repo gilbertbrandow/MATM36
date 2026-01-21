@@ -15,10 +15,12 @@
 \maketitle
 \section*{Problem 1}
 \begin{proof}
-($\Rightarrow$) Assume there is a bijection $h:A\to B$.
-Since $A$ countable, there exists $f:A\to C \subseteq \mathbb N$. Let
-$g:=f\circ h^{-1}:B\to C$. Since composition preserves bijections, $g$ is a bijection. Implying cardinality of $B$ and $A$ determined by $C$.
-Hence $A$ and $B$ have the same cardinality.
+($\Rightarrow$) Assume there exists a bijection $h:A\to B$.
+Since $A$ is countable, there exists a set $C$ and a bijection $f:A\to C$,
+where $C=\{1,\dots,n\}$ if $A$ is finite and $C=\mathbb N$ if $A$ is countably infinite.
+Define $g:=f\circ h^{-1}:B\to C$. Since compositions of bijections are bijections,
+$g$ is a bijection. Hence there exisrs a bijection from both $A$ and $B$ to the same set $C$,
+so they have the same cardinality.
 
 ($\Leftarrow$) Assume $A$ and $B$ have the same cardinality.
 Then there exists a set $C \subseteq \mathbb N$ and bijections $f:A\to C$ and $g:B\to C$. Define \(h:=g^{-1}\circ f:A\to B.\)
