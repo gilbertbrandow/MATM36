@@ -90,11 +90,14 @@ so $|\mathcal P(A)|=2^n=2^{|A|}$.
 \\
 \\
 \textbf{c: }
-Let: 
+Define
 \[
-f: \{0, 1\}^{\mathbb{N}} \to \mathcal{P(\mathbb{N})}, (x_1, x_2 \cdots) \mapsto \sum_{k = 0}^{\infty}x_k
-\] 
-So we prove f injective, then we construct a g that is surjective and we can therefore conclude there must exist bijection? Or 
-\textbf{d: }
+f:\{0,1\}^{\mathbb N}\to\mathcal P(\mathbb N),\qquad
+f((x_k)_{k\in\mathbb N})=\{\,k\in\mathbb N \mid x_k=1\,\}.
+\]
+To see $f$ is injective, suppose $f(x)=f(y)$. Then for each $k\in\mathbb N$,
+we have $x_k=1 \iff k\in f(x)=f(y)\iff y_k=1$, hence $x_k=y_k$. So $x=y$.
+For surjectivity, let $B\subseteq\mathbb N$ and define $x\in\{0,1\}^{\mathbb N}$ by
+$x_k=\mathbf 1_{\{k\in B\}}$. Then $f(x)=B$. Thus $f$ is bijective.
 
 \end{document}
