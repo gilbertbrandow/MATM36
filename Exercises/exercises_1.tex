@@ -29,11 +29,18 @@ Since $f$ and $g$ are bijections, $h$ is a bijection. \qedhere
 
 \section*{Problem 2}
 \begin{proof}
-    Let $k \in \mathbb N$, Choose $p_1, p_2, ..., p_k$ prime. Consider: 
-    \[
-        f: \mathbb N^k \to \mathbb N, \hspace{0.5cm}  (n_1, ... n_k) \mapsto p_1^{n_1} ... p_k^{n_k}. 
-    \]
-    Let $x, y \in \mathbb N^k$ such that $f(x) = f(y) \implies p_1^{x_1}...p_2^{x_k} = p_1^{y_1}...p_2^{y_k}$. 
-    For each $i \in \{1, ..., k\}$, since $p_i$ prime $p_i \mid p_j \Leftrightarrow  i = j$. Which in turn implies $p_i^{x_i} = p_i^{y_i} \implies x_i = y_i$. Hence, $x = y$, since $x, y$ arbitrary, $f$ injective. By Theorem 7.1, Topology, Munkres, J.R, $\mathbb N^k$ countable.
+Let $k\in\mathbb N$ and choose distinct primes $p_1,\dots,p_k$. Define
+\[
+f:\mathbb N^k\to\mathbb N,\qquad
+(n_1,\dots,n_k)\mapsto p_1^{n_1}\cdots p_k^{n_k}.
+\]
+Let $x,y\in\mathbb N^k$ and suppose $f(x)=f(y)$. Then
+\[
+p_1^{x_1}\cdots p_k^{x_k}=p_1^{y_1}\cdots p_k^{y_k}.
+\]
+By uniqueness of prime factorization, we must have $x_i=y_i$ for each
+$i\in \{1,\dots,k\}$. Hence $x=y$, and $f$ is injective.
+Since $\mathbb N$ is countable and $\mathbb N^k$ injects into $\mathbb N$,
+it follows by Theorem 7.1 that $\mathbb N^k$ is countable.
 \end{proof}
 \end{document}
