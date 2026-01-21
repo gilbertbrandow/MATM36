@@ -43,4 +43,23 @@ $i\in \{1,\dots,k\}$. Hence $x=y$, and $f$ is injective.
 Since $\mathbb N$ is countable and $\mathbb N^k$ injects into $\mathbb N$,
 it follows by Theorem 7.1 that $\mathbb N^k$ is countable.
 \end{proof}
+
+\section*{Problem 3}
+\begin{proof}
+$\mathbb{Q}$ is infinite since the map $f:\mathbb{N}\to\mathbb{Q}$, $n\mapsto n$, is injective.
+
+Define $g:\mathbb{Z}\times(\mathbb{Z}\setminus\{0\})\to\mathbb{Q}$ by
+\[
+g(m,n)=\frac{m}{n}.
+\]
+Then $g$ is surjective: for any $q\in\mathbb{Q}$, write $q=\frac{m}{n}$ with
+$m\in\mathbb{Z}$ and $n\in\mathbb{Z}\setminus\{0\}$, so $q=g(m,n)$.
+
+Since $\mathbb{Z}$ and $\mathbb{Z}\setminus\{0\}$ are countable,
+$\mathbb{Z}\times(\mathbb{Z}\setminus\{0\})$ is countable by Munkres Theorem 7.6.
+By Munkres Theorem 7.1, there exists a surjection
+$h:\mathbb{N} \to \mathbb{Z}\times(\mathbb{Z}\setminus\{0\})$.
+Then $g\circ h:\mathbb{N}\to\mathbb{Q}$ is a surjection, so $\mathbb{Q}$ is countable. Therefore $\mathbb{Q}$ is countably infinite.
+\end{proof}
+
 \end{document}
