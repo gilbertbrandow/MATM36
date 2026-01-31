@@ -29,10 +29,10 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 1.1  
+  - [x] Section 1.1  
 - Munkres  
-  - [ ] Section 2.20  
-  - [ ] Section 2.21  
+  - [x] Section 2.20  
+  - [/] Section 2.21  
 
 #### Exercises
 
@@ -51,4 +51,7 @@
   - [ ] Exercise 14  
 
 - Seminar 2  
-  - [ ] Selected exercises
+  - [ ] Exercise 1
+  - [ ] Exercise 2
+  - [ ] Exercise 3
+  - [ ] Exercise 4
