@@ -11,7 +11,7 @@
 
 - Munkres  
   - [x] Chapter 1, Section 6  
-  - [ ] Chapter 1, Section 7  
+  - [x] Chapter 1, Section 7  
 
 #### Exercises
 
