@@ -15,11 +15,11 @@
 \maketitle
 \section*{Problem 1}
 \begin{proof}
-($\Rightarrow$) Assume there exists a bijection $h:A\to B$.
-Since $A$ is countable, there exists a countable set $C$ and a bijection $f:A\to C$,
+($\Rightarrow$) Assume there exists a bijection $f:A\to B$.
+Since $A$ is countable, there exists a countable set $C$ and a bijection $g:A\to C$,
 where $C=\{1,\dots,n\}$ if $A$ is finite and $C=\mathbb N$ if $A$ is countably infinite.
-Define $g:=f\circ h^{-1}:B\to C$. Since compositions of bijections are bijections,
-$g$ is a bijection. Hence there exisrs a bijection from both $A$ and $B$ to the same set $C$,
+Define $h:=g\circ f^{-1}:B\to C$. Since compositions of bijections are bijections,
+$g$ is a bijection. Hence there exists a bijection from both $A$ and $B$ to the same set $C$,
 so they have the same cardinality.
 
 ($\Leftarrow$) Assume $A$ and $B$ have the same cardinality.
@@ -40,25 +40,24 @@ p_1^{x_1}\cdots p_k^{x_k}=p_1^{y_1}\cdots p_k^{y_k}.
 \]
 By uniqueness of prime factorization, we must have $x_i=y_i$ for each
 $i\in \{1,\dots,k\}$. Hence $x=y$, and $f$ is injective.
-Since $\mathbb N$ is countable and $\mathbb N^k$ injects into $\mathbb N$,
-it follows by Theorem 7.1 that $\mathbb N^k$ is countable.
+It then follows immediately by Theorem 7.1 that $\mathbb N^k$ is countable.
 \end{proof}
 
 \section*{Problem 3}
 \begin{proof}
-$\mathbb{Q}$ is infinite since the map $f:\mathbb{N}\to\mathbb{Q}$, $n\mapsto n$, is injective.
+Firstly, the trivial map $f:\mathbb{N}\to\mathbb{Q}$ $n\mapsto n$ is injective $\implies$ $\mathbb{Q}$ is infinite.
 
-Define $g:\mathbb{Z}\times(\mathbb{Z}\setminus\{0\})\to\mathbb{Q}$ by
+Next consider 
 \[
+g:\mathbb{Z}\times\mathbb{Z}^*\to\mathbb{Q} \quad
 g(m,n)=\frac{m}{n}.
 \]
-Then $g$ is surjective: for any $q\in\mathbb{Q}$, write $q=\frac{m}{n}$ with
-$m\in\mathbb{Z}$ and $n\in\mathbb{Z}\setminus\{0\}$, so $q=g(m,n)$.
+$\forall q\in\mathbb{Q}$, $\exists m \in \mathbb{Z} \wedge \exists n \in \mathbb{Z}^*$ such that $q=\frac{m}{n} \implies g(m,n) = q$ and hence $g$ surjective.
 
-Since $\mathbb{Z}$ and $\mathbb{Z}\setminus\{0\}$ are countable,
-$\mathbb{Z}\times(\mathbb{Z}\setminus\{0\})$ is countable by Munkres Theorem 7.6.
-By Munkres Theorem 7.1, there exists a surjection
-$h:\mathbb{N} \to \mathbb{Z}\times(\mathbb{Z}\setminus\{0\})$.
+Since $\mathbb{Z}$ and $\mathbb{Z}^*$ are both countable,
+$\mathbb{Z}\times\mathbb{Z}^*$ is countable by Theorem 7.6.
+By Theorem 7.1, there exists a surjection
+$h:\mathbb{N} \to \mathbb{Z}\times\mathbb{Z}^*$.
 Then $g\circ h:\mathbb{N}\to\mathbb{Q}$ is a surjection, so $\mathbb{Q}$ is countable. Therefore $\mathbb{Q}$ is countably infinite.
 \end{proof}
 
@@ -66,13 +65,13 @@ Then $g\circ h:\mathbb{N}\to\mathbb{Q}$ is a surjection, so $\mathbb{Q}$ is coun
 \textbf{a: }
 Label all elements in $A = \{a_1, \cdots, a_n\}$. Let $f: \{0, 1\}^n \to \mathcal{P(A)}$, $(x_1, \cdots, x_n)  \mapsto  \{a_i \in A \ | \ x_i = 1\} $. Let $\mathbf{x}, \mathbf{y} \in \{0, 1\}^n $. Let $f(\mathbf{x}) = f(\mathbf{y}) = \{a_{i_1}, \cdots, a_{i_m}\} \subseteq A$. 
 This implies, for each $j \in \{1, \cdots, n\} $:
-\begin{equation}
+\[
   x_j=y_j=\left\{
   \begin{array}{@{}ll@{}}
     1, & \text{if}\ j \in \{i_1, \cdots, i_m\} \\
     0, & \text{otherwise}
   \end{array}\right .
-\end{equation} 
+\] 
 Hence $\mathbf{x} = \mathbf{y}$, and since they were arbitrary, $f$ injective. \\
 Let $B = \{a_{i_1}, \cdots,  a_{i_m}\} \subseteq A \implies m \leq n$. Define $\mathbf{x}$ such that $x_j = \mathbf{1}_{\{j \in \{i_1, \cdots, i_m\}\}}$. 
 Then $f(\mathbf{x}) = B$, since $B$ arbitrary $f$ surjective and therefore bijective.
@@ -80,12 +79,12 @@ Then $f(\mathbf{x}) = B$, since $B$ arbitrary $f$ surjective and therefore bijec
 \\
 \textbf{b: }
 Let $A=\{a_1,\dots,a_n\}$. By (a) there is a bijection $f:\{0,1\}^n\to\mathcal P(A)$.
-Define
+Consider
 \[
 g:\{0,1\}^n\to\{1,\dots,2^n\},\qquad
 (x_1,\dots,x_n) \mapsto 1+\sum_{k=1}^n x_k2^{k-1}.
 \]
-Then $g$ is a bijection. Hence $h:=g\circ f^{-1}:\mathcal P(A)\to\{1,\dots,2^n\}$ is a bijection,
+$g$ is a bijection. Hence $h:=g\circ f^{-1}:\mathcal P(A)\to\{1,\dots,2^n\}$ is a bijection,
 so $|\mathcal P(A)|=2^n=2^{|A|}$.
 \\
 \\
@@ -93,12 +92,17 @@ so $|\mathcal P(A)|=2^n=2^{|A|}$.
 Define
 \[
 f:\{0,1\}^{\mathbb N}\to\mathcal P(\mathbb N),\qquad
-f((x_k)_{k\in\mathbb N})=\{\,k\in\mathbb N \mid x_k=1\,\}.
+(x_1, x_2 \cdots)\mapsto\{\,k\in\mathbb N \mid x_k=1\,\}.
 \]
-To see $f$ is injective, suppose $f(x)=f(y)$. Then for each $k\in\mathbb N$,
-we have $x_k=1 \iff k\in f(x)=f(y)\iff y_k=1$, hence $x_k=y_k$. So $x=y$.
-For surjectivity, let $B\subseteq\mathbb N$ and define $x\in\{0,1\}^{\mathbb N}$ by
-$x_k=\mathbf 1_{\{k\in B\}}$. Then $f(x)=B$. Thus $f$ is bijective.
+Let $\mathbf{x},\mathbf{y}\in \{0,1\}^{\mathbb N} : f(\mathbf{x})=f(\mathbf{y}) = C \subseteq \mathbb{N}$. Then 
+\[
+  x_i= y_i =\left\{
+  \begin{array}{@{}ll@{}}
+    1, & \text{if}\ i \in C \\
+    0, & \text{otherwise}
+  \end{array} \implies \mathbf{x}=\mathbf{y}\right.
+\]
+Hence $f$ injective. Let $A \in \mathcal P(\mathbb N)$, $\exists \mathbf{x}\in\{0,1\}^{\mathbb N} : x_k=\mathbf 1_{\{k\in A\}}$. Then $f(\mathbf{x})=A$., Since $A$ arbitrary, $f$ surjective and therefore also bijective.
 \\
 \\
 \textbf{d: } Suppose for contradiction that $\mathcal P(\mathbb N)$ is countable.
