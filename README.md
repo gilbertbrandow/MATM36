@@ -37,9 +37,9 @@
 #### Exercises
 
 - Gamelin–Greene, Section 1.1  
-  - [ ] Exercise 1  
-  - [ ] Exercise 2  
-  - [ ] Exercise 3  
+  - [x] Exercise 1  
+  - [x] Exercise 2  
+  - [/] Exercise 3  
   - [ ] Exercise 5  
   - [ ] Exercise 6  
   - [ ] Exercise 7  
