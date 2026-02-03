@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{amsthm}
+\title{Topology: Extra Problems 1}
+\author{Simon Gustafsson}
+\date{}
+\begin{document}
+\maketitle
+\section*{Problem 1}
+\textbf{(a)}
+\begin{proof}
+By definition $\varnothing \in \mathcal T_d$ and $\mathbb R \in \mathcal T_d$ since $\mathbb R \setminus \mathbb R = \varnothing$ is finite, hence $\mathcal T_a=\{\varnothing,\mathbb R\}\subset \mathcal T_d$.
+Let $U=\mathbb R\setminus\{0\}$; then $\mathbb R\setminus U=\{0\}$ is finite, so $U\in\mathcal T_d$ but $U\notin\mathcal T_a$, hence $\mathcal T_a\subsetneq\mathcal T_d$.
+
+Let $U\in\mathcal T_d$. If $U=\varnothing$ then $U\in\mathcal T_c$. Otherwise $\mathbb R\setminus U$ is finite, hence closed in the standard topology, so $U=(\mathbb R\setminus U)^c$ is open and $U\in\mathcal T_c$. Thus $\mathcal T_d\subset \mathcal T_c$.
+However, $(0,1)\in\mathcal T_c$ but $(0,1)\notin\mathcal T_d$ since $\mathbb R\setminus(0,1)$ is infinite, hence $\mathcal T_d\subsetneq\mathcal T_c$.
+
+Since $\mathcal T_b=\mathcal P(\mathbb R)$, every subset of $\mathbb R$ is in $\mathcal T_b$, in particular every $U\in\mathcal T_c$, hence $\mathcal T_c\subset \mathcal T_b$.
+Moreover, $\{0\}\in\mathcal T_b$ but $\{0\}$ closed $\implies \{0\}\notin\mathcal T_c \implies \mathcal T_c\subsetneq \mathcal T_b$.
+\end{proof}
+
+\textbf{(b)}
+\begin{proof}
+Since $\mathbb R\setminus U$ finite $\Rightarrow \mathbb R\setminus U$ countable, we have $\mathcal T_d\subset \mathcal T_e$.
+Let $U=\mathbb R\setminus\mathbb Z$. Then $\mathbb R\setminus U=\mathbb Z$ is countably infinite, so $U\in\mathcal T_e$, but $U\notin\mathcal T_d$; hence $\mathcal T_d\subsetneq \mathcal T_e$.
+
+Since $\mathcal T_b=\mathcal P(\mathbb R)$, every subset of $\mathbb R$ is in $\mathcal T_b$, in particular every $U\in\mathcal T_e$, hence $\mathcal T_e\subset \mathcal T_b$.
+Moreover, $\{0\}\in\mathcal T_b$ but $\{0\}\notin\mathcal T_e$ since $\mathbb R\setminus\{0\}$ is uncountable; therefore $\mathcal T_e\subsetneq \mathcal T_b$.
+\end{proof}
+    
+\end{document}
