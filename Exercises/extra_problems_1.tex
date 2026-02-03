@@ -34,5 +34,37 @@ Let $U=\mathbb R\setminus\mathbb Z$. Then $\mathbb R\setminus U=\mathbb Z$ is co
 Since $\mathcal T_b=\mathcal P(\mathbb R)$, every subset of $\mathbb R$ is in $\mathcal T_b$, in particular every $U\in\mathcal T_e$, hence $\mathcal T_e\subset \mathcal T_b$.
 Moreover, $\{0\}\in\mathcal T_b$ but $\{0\}\notin\mathcal T_e$ since $\mathbb R\setminus\{0\}$ is uncountable; therefore $\mathcal T_e\subsetneq \mathcal T_b$.
 \end{proof}
-    
+
+\section*{Problem 2}
+\textbf{(a)}
+\begin{proof}
+$d_X\ge 0 \wedge d_Y \ge 0 \implies d \ge 0$. Assume $d((x_1,y_1),(x_2,y_2))=0$. Then
+\[
+\max\{d_X(x_1,x_2),\,d_Y(y_1,y_2)\}=0,
+\]
+which implies $d_X(x_1,x_2)=d_Y(y_1,y_2)=0$. Since $d_X$ and $d_Y$ are metrics, this gives $x_1=x_2$ and $y_1=y_2$, hence $(x_1,y_1)=(x_2,y_2)$.
+If $(x_1,y_1)=(x_2,y_2)$, then $d_X(x_1,x_2)=d_Y(y_1,y_2)=0$, so $d((x_1,y_1),(x_2,y_2))=0$. Let $(x_i,y_i)\in X\times Y$,
+\[
+\begin{aligned}
+d_X(x_1,x_3)
+&\le d_X(x_1,x_2)+d_X(x_2,x_3)
+\le d((x_1,y_1),(x_2,y_2))+d((x_2,y_2),(x_3,y_3)), \\
+d_Y(y_1,y_3)
+&\le d_Y(y_1,y_2)+d_Y(y_2,y_3)
+\le d((x_1,y_1),(x_2,y_2))+d((x_2,y_2),(x_3,y_3)), \\
+d((x_1,y_1),(x_3,y_3))
+&= \max\{d_X(x_1,x_3),\,d_Y(y_1,y_3)\}
+\le d((x_1,y_1),(x_2,y_2))+d((x_2,y_2),(x_3,y_3)).
+\end{aligned}
+\]
+\end{proof}
+
+\textbf{(b)}
+\begin{proof}
+Assume $(x',y')\in B_r^{d}((x,y))$. Then $d((x',y'),(x,y))=\max\{d_X(x',x),\,d_Y(y',y)\}<r$,
+so $d_X(x',x)<r \implies x'\in B_r^{d_X}(x)$ and $d_Y(y',y)<r \implies y'\in B_r^{d_Y}(y)$. Therefore $(x',y')\in B_r^{d_X}(x)\times B_r^{d_Y}(y)$.
+
+Assume $(x',y')\in B_r^{d_X}(x)\times B_r^{d_Y}(y)$. Then $d_X(x',x)=r_1<r$ and $d_Y(y',y)=r_2<r$, hence $d((x',y'),(x,y))=\max\{r_1, r_2\}<r \implies (x',y')\in B_r^{d}((x,y))$
+\end{proof}
+
 \end{document}
