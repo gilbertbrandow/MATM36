@@ -67,4 +67,24 @@ so $d_X(x',x)<r \implies x'\in B_r^{d_X}(x)$ and $d_Y(y',y)<r \implies y'\in B_r
 Assume $(x',y')\in B_r^{d_X}(x)\times B_r^{d_Y}(y)$. Then $d_X(x',x)=r_1<r$ and $d_Y(y',y)=r_2<r$, hence $d((x',y'),(x,y))=\max\{r_1, r_2\}<r \implies (x',y')\in B_r^{d}((x,y))$
 \end{proof}
 
+\textbf{(c)}
+\begin{proof}
+$U$ open $\implies \exists r_1>0 : B^{d_X}_{r_1}(x)\subseteq U$, and since $V$ is open, $\exists r_2>0 : B^{d_Y}_{r_2}(y)\subseteq V$.
+Let $\varepsilon=\min\{r_1,r_2\}$. Then
+\[
+B^{d}_{\varepsilon}((x,y))=B^{d_X}_{\varepsilon}(x)\times B^{d_Y}_{\varepsilon}(y)
+\subseteq B^{d_X}_{r_1}(x)\times B^{d_Y}_{r_2}(y)\subseteq U\times V.
+\]
+Let $(x,y)\in X\times Y$ and $\varepsilon>0$. Set
+$
+U:=B^{d_X}_{\varepsilon}(x)\subseteq X, V:=B^{d_Y}_{\varepsilon}(y)\subseteq Y.
+$
+Then $U$ and $V$ are open, $(x,y)\in U\times V$, and by previous
+\[
+U\times V = B^{d_X}_{\varepsilon}(x)\times B^{d_Y}_{\varepsilon}(y)=B^{d}_{\varepsilon}((x,y)),
+\]
+hence $(x,y)\in U\times V\subseteq B^{d}_{\varepsilon}((x,y))$.
+
+\end{proof}
+
 \end{document}
