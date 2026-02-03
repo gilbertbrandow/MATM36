@@ -87,4 +87,23 @@ hence $(x,y)\in U\times V\subseteq B^{d}_{\varepsilon}((x,y))$.
 
 \end{proof}
 
+\textbf{(d)}
+\begin{proof}
+Let $W\in\mathcal T'$. Then $W=\bigcup_{\alpha}(U_\alpha\times V_\alpha)$ with each $U_\alpha$ open in $X$ and $V_\alpha$ open in $Y$.
+Fix $\alpha$ and $(x,y)\in U_\alpha\times V_\alpha$. By (c)(i) there exists $\varepsilon>0$ such that
+\[
+B^d_\varepsilon((x,y))\subseteq U_\alpha\times V_\alpha.
+\]
+Hence each $U_\alpha\times V_\alpha$ is $d$-open, so $U_\alpha\times V_\alpha\in\mathcal T$, and therefore $W\in\mathcal T$ (arbitrary unions of $d$-open sets are $d$-open).
+
+Let $W\in\mathcal T$ and fix $(x,y)\in W$. Then there exists $\varepsilon>0$ such that
+\[
+B^d_\varepsilon((x,y))\subseteq W.
+\]
+By (c)(ii) there exist $U$ open in $X$ and $V$ open in $Y$ with
+\[
+(x,y)\in U\times V \subseteq B^d_\varepsilon((x,y))\subseteq W.
+\]
+Thus every point of $W$ lies in some basis element $U\times V\in\mathcal B$ contained in $W$, so $W$ is a union of such basis elements and hence $W\in\mathcal T' implies \mathcal T \subseteq T'$. Therefore $\mathcal T=\mathcal T'$.
+\end{proof}
 \end{document}
