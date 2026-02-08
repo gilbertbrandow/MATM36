@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD024 -->
-# Topology (MATM36) - Weekly plan
+# Topology (MATM36)
 
 ## Week 1
 
