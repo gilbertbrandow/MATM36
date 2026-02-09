@@ -64,7 +64,7 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 1.2  
+  - [x] Section 1.2  
   - [ ] Section 1.3  
 - Munkres  
   - [ ] Section 2.20  
@@ -73,9 +73,9 @@
 #### Exercises
 
 - Gamelin–Greene, Section 1.2  
-  - [ ] Exercise 1  
-  - [ ] Exercise 2  
-  - [ ] Exercise 3  
+  - [x] Exercise 1  
+  - [x] Exercise 2  
+  - [/] Exercise 3  
   - [ ] Exercise 5  
   - [ ] Exercise 7 (optional)  
 
