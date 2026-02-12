@@ -94,7 +94,7 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 1.4  
+  - [/] Section 1.4  
 
 #### Exercises
 
