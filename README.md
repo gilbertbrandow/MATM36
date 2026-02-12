@@ -65,25 +65,25 @@
 
 - Gamelin–Greene  
   - [x] Section 1.2  
-  - [ ] Section 1.3  
+  - [x] Section 1.3  
 - Munkres  
-  - [ ] Section 2.20  
-  - [ ] Section 2.21  
+  - [/] Section 2.20  
+  - [/] Section 2.21  
 
 #### Exercises
 
 - Gamelin–Greene, Section 1.2  
   - [x] Exercise 1  
   - [x] Exercise 2  
-  - [/] Exercise 3  
-  - [ ] Exercise 5  
+  - [x] Exercise 3  
+  - [x] Exercise 5  
   - [ ] Exercise 7 (optional)  
 
 - Gamelin–Greene, Section 1.3  
-  - [ ] Exercise 3  
-  - [ ] Exercise 4  
-  - [ ] Exercise 5  
-  - [ ] Exercise 7  
+  - [x] Exercise 3  
+  - [x] Exercise 4  
+  - [x] Exercise 5  
+  - [/] Exercise 7  Cantor set (Important)
 
 #### Seminar
 
