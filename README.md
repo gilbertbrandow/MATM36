@@ -114,13 +114,13 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 1.5  
+  - [/] Section 1.5 (Revisit)  
 
 #### Exercises
 
 - Gamelin–Greene, Section 1.5  
-  - [ ] Exercise 3  
-  - [ ] Exercise 5  
+  - [x] Exercise 3  
+  - [/] Exercise 5 (Revisit)  
   - [ ] Exercise 7  
 
 #### Seminar
