@@ -121,7 +121,7 @@
 - Gamelin–Greene, Section 1.5  
   - [x] Exercise 3  
   - [/] Exercise 5 (Revisit)  
-  - [ ] Exercise 7  
+  - [x] Exercise 7 (New type of equivalence proof)  
 
 #### Seminar
 
@@ -132,13 +132,13 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 1.6  
+  - [/] Section 1.6  
   - [ ] Section 1.7  
 
 #### Exercises
 
 - Gamelin–Greene, Section 1.6  
-  - [ ] Exercise 1  
+  - [x] Exercise 1 (Important for epsilon-delta proofs)
   - [ ] Exercise 2  
   - [ ] Exercise 3  
   - [ ] Exercise 6  
