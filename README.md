@@ -133,7 +133,7 @@
 
 - Gamelin–Greene  
   - [/] Section 1.6
-  - [ ] Section 1.7
+  - [/] Section 1.7
 
 #### Exercises
 
@@ -142,17 +142,17 @@
   - [/] Exercise 2  
   - [x] Exercise 3 (Revisit)  
   - [/] Exercise 6 (Intermediate value theorem)
-  - [ ] Exercise 7  
+  - [x] Exercise 7  
   - [ ] Exercise 11 (optional)  
 
 - Gamelin–Greene, Section 1.7  
-  - [ ] Exercise 1  
-  - [ ] Exercise 2  
-  - [ ] Exercise 3  
-  - [ ] Exercise 4  
-  - [ ] Exercise 5  
+  - [x] Exercise 1  
+  - [x] Exercise 2  
+  - [x] Exercise 3  
+  - [x] Exercise 4  
+  - [x] Exercise 5  
   - [ ] Exercise 7 (optional)  
-  - [ ] Exercise 8  
+  - [/] Exercise 8 (Revisit completeness proof, maybe ask?)
   - [ ] Exercise 11  
 
 ## Week 4
