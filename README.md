@@ -152,7 +152,7 @@
   - [x] Exercise 4  
   - [x] Exercise 5  
   - [ ] Exercise 7 (optional)  
-  - [/] Exercise 8 (Revisit completeness proof, maybe ask?)
+  - [/] Exercise 8 (Revisit completeness proof, tail bounding)
   - [ ] Exercise 11  
 
 ## Week 4
@@ -164,8 +164,8 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [/] Section 2.1  
-  - [ ] Section 2.2  
+  - [x] Section 2.1  
+  - [/] Section 2.2  
 
 #### Exercises
 
@@ -180,9 +180,9 @@
   - [x] Exercise 8  
 
 - Gamelin–Greene, Section 2.2  
-  - [ ] Exercise 1  
-  - [ ] Exercise 2  
-  - [ ] Exercise 4  
+  - [x] Exercise 1  
+  - [x] Exercise 2  
+  - [x] Exercise 4 (Revisit relative open & relative closed)
 
 #### Seminar
 
