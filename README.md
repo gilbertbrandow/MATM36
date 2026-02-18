@@ -193,16 +193,16 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 2.3  
+  - [/] Section 2.3 (Important to get comfortable with continuity)
   - [ ] Section 2.4  
 
 #### Exercises
 
 - Gamelin–Greene, Section 2.3  
-  - [ ] Exercise 1  
-  - [ ] Exercise 2  
-  - [ ] Exercise 3  
-  - [ ] Exercise 7  
+  - [/] Exercise 1  
+  - [x] Exercise 2  
+  - [x] Exercise 3  
+  - [/] Exercise 7 (Important, revisit)  
 
 - Gamelin–Greene, Section 2.4  
   - [ ] Exercise 3  
