@@ -205,10 +205,10 @@
   - [/] Exercise 7 (Important, revisit)  
 
 - Gamelin–Greene, Section 2.4  
-  - [ ] Exercise 3  
-  - [ ] Exercise 4  
-  - [ ] Exercise 5  
-  - [ ] Exercise 6  
+  - [x] Exercise 3  
+  - [x] Exercise 4  
+  - [x] Exercise 5  
+  - [x] Exercise 6  
 
 ## Week 5
 
@@ -219,14 +219,14 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 2.5  
+  - [/] Section 2.5 (Important, revisit big theorems)  
 
 #### Exercises
 
 - Gamelin–Greene, Section 2.5  
-  - [ ] Exercise 1  
-  - [ ] Exercise 2  
-  - [ ] Exercise 3  
+  - [x] Exercise 1  
+  - [x] Exercise 2  
+  - [x] Exercise 3  
   - [ ] Exercise 4  
   - [ ] Exercise 5  
   - [ ] Exercise 6  
