@@ -241,12 +241,12 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 2.6  
+  - [/] Section 2.6  
 
 #### Exercises
 
 - Gamelin–Greene, Section 2.6  
-  - [ ] Exercise 1  
+  - [X] Exercise 1  
   - [ ] Exercise 2  
   - [ ] Exercise 3  
   - [ ] Exercise 4  
