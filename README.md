@@ -263,13 +263,13 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 2.7  
+  - [/] Section 2.7  
   - [ ] Section 2.8  
 
 #### Exercises
 
 - Gamelin–Greene, Section 2.7  
-  - [ ] Exercise 4  
+  - [x] Exercise 4  
   - [ ] Exercise 6  
   - [ ] Exercise 7  
 
