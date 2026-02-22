@@ -247,12 +247,12 @@
 
 - Gamelin–Greene, Section 2.6  
   - [X] Exercise 1  
-  - [ ] Exercise 2  
-  - [ ] Exercise 3  
-  - [ ] Exercise 4  
-  - [ ] Exercise 5  
-  - [ ] Exercise 6  
-  - [ ] Exercise 7  
+  - [x] Exercise 2  
+  - [x] Exercise 3  
+  - [x] Exercise 4  
+  - [x] Exercise 5 (Maybe revisit, incomplete proof?)  
+  - [/] Exercise 6  
+  - [x] Exercise 7 (Dont understand point of?)
 
 ## Week 6
 
