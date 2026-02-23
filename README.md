@@ -270,8 +270,8 @@
 
 - Gamelin–Greene, Section 2.7  
   - [x] Exercise 4  
-  - [ ] Exercise 6  
-  - [ ] Exercise 7  
+  - [x] Exercise 6  
+  - [/] Exercise 7 (Lenghty, seterographic projection)  
 
 - Gamelin–Greene, Section 2.8  
   - [ ] Exercise 3  
