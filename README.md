@@ -274,11 +274,11 @@
   - [/] Exercise 7 (Lenghty, seterographic projection)  
 
 - Gamelin–Greene, Section 2.8  
-  - [ ] Exercise 3  
-  - [ ] Exercise 4  
-  - [ ] Exercise 5  
-  - [ ] Exercise 6  
-  - [ ] Exercise 9  
+  - [x] Exercise 3  
+  - [x] Exercise 4 (Important)
+  - [x] Exercise 5  
+  - [x] Exercise 6  
+  - [x] Exercise 9  
 
 #### Seminar
 
