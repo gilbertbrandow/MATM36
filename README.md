@@ -289,15 +289,15 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 2.9  
+  - [/] Section 2.9 (Straightforward, but interesting)
   - [ ] Section 2.10  
 
 #### Exercises
 
 - Gamelin–Greene, Section 2.9  
-  - [ ] Exercise 3  
-  - [ ] Exercise 4  
-  - [ ] Exercise 8  
+  - [x] Exercise 3  
+  - [x] Exercise 4  
+  - [x] Exercise 8 (important counter examples, revisit)
 
 - Gamelin–Greene, Section 2.10  
   - [ ] Exercise 2  
