@@ -290,7 +290,7 @@
 
 - Gamelin–Greene  
   - [/] Section 2.9 (Straightforward, but interesting)
-  - [ ] Section 2.10  
+  - [/] Section 2.10 (important, espacially Tychonoffs finite version)  
 
 #### Exercises
 
