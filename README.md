@@ -300,8 +300,8 @@
   - [x] Exercise 8 (important counter examples, revisit)
 
 - Gamelin–Greene, Section 2.10  
-  - [ ] Exercise 2  
-  - [ ] Exercise 3  
+  - [x] Exercise 2  
+  - [/] Exercise 3 (Revisit, a bit sloppy)
 
 ## Week 7
 
