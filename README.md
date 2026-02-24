@@ -312,16 +312,16 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 2.11  
+  - [/] Section 2.11 (Revisit)
   - [ ] Section 2.12  
 
 #### Exercises
 
 - Gamelin–Greene, Section 2.11  
-  - [ ] Exercise 3  
-  - [ ] Exercise 4  
-  - [ ] Exercise 5  
-  - [ ] Exercise 6  
+  - [x] Exercise 3  
+  - [x] Exercise 4  
+  - [x] Exercise 5  
+  - [/] Exercise 6 (Baire Category Theorem)
 
 - Gamelin–Greene, Section 2.12  
   - [ ] Exercise 1  
