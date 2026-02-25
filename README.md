@@ -323,11 +323,11 @@
   - [x] Exercise 5  
   - [/] Exercise 6 (Baire Category Theorem)
 
-- Gamelin–Greene, Section 2.12  
-  - [ ] Exercise 1  
-  - [ ] Exercise 2  
-  - [ ] Exercise 3  
-  - [ ] Exercise 4  
+- Gamelin–Greene, Section 2.12 (Product and box topologies)
+  - [x] Exercise 1
+  - [x] Exercise 2  
+  - [/] Exercise 3 (Revisit, misunderstood coordinate slice)
+  - [x] Exercise 4 (Limit to finite coordinates, lift via projection)
 
 #### Seminar
 
