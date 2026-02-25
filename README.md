@@ -338,14 +338,14 @@
 #### Reading
 
 - Gamelin–Greene  
-  - [ ] Section 2.6  
+  - [x] Section 2.6  
 
 #### Exercises
 
-- Gamelin–Greene, Section 2.6  
-  - [ ] Exercise 8  
-  - [ ] Exercise 9  
-  - [ ] Exercise 10  
+- Gamelin–Greene, Section 2.6
+  - [x] Exercise 8 (Difficult, revisit)
+  - [x] Exercise 9  
+  - [x] Exercise 10
 
 ## Week 8
 
