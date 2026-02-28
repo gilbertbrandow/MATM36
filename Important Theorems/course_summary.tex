@@ -13,20 +13,84 @@
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
 
 
 \begin{document}
 \maketitle
 
-\section*{Baire Category Theorem}
+\section*{Metric Spaces}
+
+\begin{definition}
+Let $X$ be a topological space and $A \subseteq X$. A point $x \in X$ is called an \emph{adherent point} of $A$ if every open neighbourhood $U$ of $x$ satisfies
+\[
+U \cap A \neq \varnothing.
+\]
+\end{definition}
+
+In the special case where $X$ is a metric space with metric $d$, this is equivalent to requiring that for every $r>0$,
+\[
+B_r(x) \cap A \neq \varnothing.
+\]
+
+\begin{definition}
+Let $X$ be a topological space and $A \subseteq X$. The set $A$ is called \emph{dense} in $X$ if every nonempty open set $U \subseteq X$ satisfies
+\[
+U \cap A \neq \varnothing.
+\]
+Equivalently, $A$ is dense in $X$ if $\overline{A} = X$.
+\end{definition}
+
+\begin{definition}
+Let $X$ be a topological space and $A \subseteq X$. 
+The set $A$ is called \emph{nowhere dense} in $X$ if
+\[
+\operatorname{int}(\overline{A}) = \varnothing.
+\]
+\end{definition}
+
+\subsection*{Baire Category Theorem}
 
 \begin{theorem}[Baire Category Theorem]
 Let $(X,d)$ be a complete metric space and let $\{U_n\}_{n=1}^{\infty}$ be a sequence of dense open subsets of $X$. Then \(\bigcap_{n=1}^{\infty} U_n\) is dense in $X$.
 \end{theorem}
 
 \begin{proof}
-To be added.
+Fix a nonempty open ball $B(x,\varepsilon)\subset X$.
+
+Since $U_1$ is dense and open, choose $y_1\in U_1\cap B(x,\varepsilon)$ and $r_1>0$ such that
+\[
+\overline{B}(y_1,r_1)\subset U_1\cap B(x,\varepsilon),\qquad r_1<1.
+\]
+Inductively, having chosen $y_n,r_n$, use that $U_{n+1}$ is dense and open to pick
+$y_{n+1}\in U_{n+1}\cap B(y_n,r_n)$ and $r_{n+1}>0$ such that
+\[
+\overline{B}(y_{n+1},r_{n+1})\subset U_{n+1}\cap B(y_n,r_n),\qquad r_{n+1}<\frac1{n+1}.
+\]
+Then the closed balls are nested:
+\[
+\overline{B}(y_{n+1},r_{n+1})\subset \overline{B}(y_n,r_n)\subset \cdots \subset \overline{B}(y_1,r_1)\subset B(x,\varepsilon),
+\]
+and for $m>n$ we have $y_m\in B(y_n,r_n)$, hence $d(y_m,y_n)<r_n\to 0$. Thus $(y_n)$ is Cauchy, so by completeness $y_n\to y\in X$.
+
+For each fixed $n$, all tails of the sequence lie in $\overline{B}(y_n,r_n)$, so the limit satisfies
+$y\in \overline{B}(y_n,r_n)\subset U_n$. Hence $y\in \bigcap_{n=1}^\infty U_n$, and also
+$y\in \overline{B}(y_1,r_1)\subset B(x,\varepsilon)$. Therefore
+\[
+B(x,\varepsilon)\cap\bigcap_{n=1}^\infty U_n\neq\varnothing,
+\]
+so the intersection is dense.
 \end{proof}
+
+
+\begin{remark}
+From the definitions it follows that a set $B \subseteq X$ satisfies 
+\(\operatorname{int}(B)=\varnothing \Longleftrightarrow X\setminus B \text{ is dense in } X.\)
+In particular, if $A$ is nowhere dense, then
+\( X\setminus \overline{A}\) 
+is open and dense in $X$.
+\end{remark}
 
 \begin{corollary}
 Let $(X,d)$ be a complete metric space and let $\{F_n\}_{n=1}^{\infty}$ be a sequence of nowhere dense subsets of $X$. Then
@@ -36,7 +100,7 @@ Let $(X,d)$ be a complete metric space and let $\{F_n\}_{n=1}^{\infty}$ be a seq
 \end{corollary}
 
 \begin{proof}
-Since $F_n$ is nowhere dense, $U_n:=X\setminus\overline{F_n}$ is open and dense; by Baire, $\bigcap_{n=1}^\infty U_n$ is dense, hence nonempty in every nonempty open set, i.e. $\bigcup_{n=1}^\infty \overline{F_n}$ (and thus $\bigcup_{n=1}^\infty F_n$) has empty interior.
+Since $F_n$ is nowhere dense, $U_n:=X\setminus\overline{F_n}$ is open and dense; by Baire, $\bigcap_{n=1}^\infty U_n = \bigcup_{n=1}^\infty \overline{F_n}$ is dense, hence nonempty in every nonempty open set.
 \end{proof}
 
 \end{document}
