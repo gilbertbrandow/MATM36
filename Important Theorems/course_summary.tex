@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{amsthm}
+
+\title{Topology MATM36: Course Summary of Important Results}
+\author{Simon Gustafsson}
+\date{}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+
+
+\begin{document}
+\maketitle
+
+\section*{Baire Category Theorem}
+
+\begin{theorem}[Baire Category Theorem]
+Let $(X,d)$ be a complete metric space and let $\{U_n\}_{n=1}^{\infty}$ be a sequence of dense open subsets of $X$. Then \(\bigcap_{n=1}^{\infty} U_n\) is dense in $X$.
+\end{theorem}
+
+\begin{proof}
+To be added.
+\end{proof}
+
+\begin{corollary}
+Let $(X,d)$ be a complete metric space and let $\{F_n\}_{n=1}^{\infty}$ be a sequence of nowhere dense subsets of $X$. Then
+\[
+\operatorname{int}\!\left(\bigcup_{n=1}^{\infty} F_n\right)=\varnothing.
+\]
+\end{corollary}
+
+\begin{proof}
+Since $F_n$ is nowhere dense, $U_n:=X\setminus\overline{F_n}$ is open and dense; by Baire, $\bigcap_{n=1}^\infty U_n$ is dense, hence nonempty in every nonempty open set, i.e. $\bigcup_{n=1}^\infty \overline{F_n}$ (and thus $\bigcup_{n=1}^\infty F_n$) has empty interior.
+\end{proof}
+
+\end{document}
