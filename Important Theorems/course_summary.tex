@@ -103,4 +103,74 @@ Let $(X,d)$ be a complete metric space and let $\{F_n\}_{n=1}^{\infty}$ be a seq
 Since $F_n$ is nowhere dense, $U_n:=X\setminus\overline{F_n}$ is open and dense; by Baire, $\bigcap_{n=1}^\infty U_n = \bigcup_{n=1}^\infty \overline{F_n}$ is dense, hence nonempty in every nonempty open set.
 \end{proof}
 
+\subsection*{Finite Products of Metric Spaces}
+
+\begin{definition}
+Let $(X_k,d_k)$, $k=1,\dots,n$, be metric spaces and set
+\[
+X = X_1 \times \cdots \times X_n.
+\]
+A metric $d$ on $X$ is said to be a \emph{product metric} if convergence in $(X,d)$ is coordinatewise,
+\[
+x^{(m)} = (x_1^{(m)},\dots,x_n^{(m)}) \to x=(x_1,\dots,x_n)
+\]
+in $X$ if and only if for each $k=1,\dots,n$,
+\[
+x_k^{(m)} \to x_k \quad \text{in } X_k.
+\]
+\end{definition}
+
+\begin{theorem}
+Suppose $d$ is a metric on $X=X_1\times\cdots\times X_n$ satisfying the above coordinatewise convergence property. Then the open sets in $(X,d)$ are precisely the unions of product sets
+\[
+U_1 \times \cdots \times U_n,
+\]
+where each $U_k$ is open in $X_k$.
+\end{theorem}
+
+\begin{proof}
+First, if $E_k \subset X_k$ is closed for each $k$, then
+\[
+E_1 \times \cdots \times E_n
+\]
+is closed in $X$. Indeed, if $x^{(m)} \in E_1 \times \cdots \times E_n$ and $x^{(m)} \to x$ in $X$, then by coordinatewise convergence,
+$x_k^{(m)} \to x_k$ in $X_k$. Since each $E_k$ is closed, $x_k \in E_k$, hence
+$x \in E_1 \times \cdots \times E_n$.
+
+Now let $U_k \subset X_k$ be open. Then
+\[
+V^{(k)} := X_1 \times \cdots \times X_{k-1} \times U_k \times X_{k+1} \times \cdots \times X_n
+\]
+is open in $X$, since its complement is of the form
+\[
+X_1 \times \cdots \times (X_k \setminus U_k) \times \cdots \times X_n,
+\]
+which is closed by the previous remark. Hence
+\[
+U_1 \times \cdots \times U_n
+=
+\bigcap_{k=1}^n V^{(k)}
+\]
+is open in $X$, and any union of such products is open.
+
+Conversely, let $U \subset X$ be open and $x=(x_1,\dots,x_n)\in U$.
+We show there exist open sets $U_k \subset X_k$ such that
+\[
+x \in U_1 \times \cdots \times U_n \subset U.
+\]
+Suppose not. Then for each $m\in\mathbb{N}$,
+\[
+B_{X_1}(x_1,1/m) \times \cdots \times B_{X_n}(x_n,1/m)
+\not\subset U.
+\]
+Thus there exists $x^{(m)} \notin U$ with
+\[
+d_k(x_k^{(m)},x_k) < \frac1m, \qquad k=1,\dots,n.
+\]
+Then $x_k^{(m)} \to x_k$ for each $k$, hence $x^{(m)} \to x$ in $X$.
+Since $X\setminus U$ is closed and each $x^{(m)} \in X\setminus U$,
+we conclude $x \in X\setminus U$, a contradiction.
+Therefore such open sets $U_k$ exist, and $U$ is a union of product sets.
+\end{proof}
+
 \end{document}
