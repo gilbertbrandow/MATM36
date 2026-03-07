@@ -249,6 +249,45 @@ F \subseteq U, \qquad G \subseteq V, \qquad U \cap V = \varnothing.
 A topological space $(X,\mathcal{T})$ is called a \emph{$T_4$-space} if it is both $T_1$ and normal.
 \end{definition}
 
+\begin{theorem}
+Every compact Hausdorff space is normal. In particular, every compact Hausdorff space is a $T_4$-space.
+\end{theorem}
+
+\begin{proof}[Proof]
+Let $F,G \subseteq X$ be disjoint closed sets. Since $X$ is Hausdorff, for each $x \in F$ and $y \in G$ there exist disjoint open sets $U_{x,y}$ and $V_{x,y}$ such that
+\[
+x \in U_{x,y}, \qquad y \in V_{x,y}, \qquad U_{x,y} \cap V_{x,y} = \varnothing.
+\]
+
+For fixed $x \in F$, the sets $\{V_{x,y}\}_{y \in G}$ form an open cover of $G$. Since $G$ is closed in the compact space $X$, it is compact, so we may choose a finite subcover
+\[
+G \subseteq V_{x,y_1} \cup \cdots \cup V_{x,y_n}.
+\]
+
+Let
+\[
+U_x := U_{x,y_1} \cap \cdots \cap U_{x,y_n}, 
+\qquad
+V_x := V_{x,y_1} \cup \cdots \cup V_{x,y_n}.
+\]
+Then $x \in U_x$, $G \subseteq V_x$, and $U_x \cap V_x = \varnothing$.
+
+The family $\{U_x\}_{x \in F}$ is an open cover of $F$. Since $F$ is compact, choose a finite subcover
+\[
+F \subseteq U_{x_1} \cup \cdots \cup U_{x_m}.
+\]
+
+Define
+\[
+U := U_{x_1} \cup \cdots \cup U_{x_m},
+\qquad
+V := V_{x_1} \cap \cdots \cap V_{x_m}.
+\]
+
+Then $U$ and $V$ are open, $F \subseteq U$, $G \subseteq V$, and $U \cap V = \varnothing$. Hence $X$ is normal.
+\end{proof}
+
+
 \subsection*{Basis \& Subbasis}
 
 \begin{definition}
