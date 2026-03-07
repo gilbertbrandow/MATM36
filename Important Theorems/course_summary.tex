@@ -201,6 +201,54 @@ The pair $(X,\mathcal{T})$ is called a \emph{topological space}. The sets $U \in
 A subset $F \subseteq X$ is called \emph{closed} if its complement is open.
 \end{definition}
 
+\subsection*{Separation Axioms}
+
+\begin{definition}[$T_0$ space]
+A topological space $(X,\mathcal{T})$ is called a \emph{$T_0$-space} if for every pair of distinct points $x,y \in X$, there exists an open set $U \in \mathcal{T}$ such that
+\[
+x \in U,\; y \notin U
+\quad \text{or} \quad
+y \in U,\; x \notin U.
+\]
+\end{definition}
+
+\begin{definition}[$T_1$ space]
+A topological space $(X,\mathcal{T})$ is called a \emph{$T_1$-space} if for every pair of distinct points $x,y \in X$, there exists an open set $U \in \mathcal{T}$ such that
+\[
+y \in U \quad \text{and} \quad x \notin U.
+\]
+Equivalently, $(X,\mathcal{T})$ is $T_1$ if and only if every singleton set $\{x\}$ is closed in $X$.
+\end{definition}
+
+\begin{definition}[$T_2$ space / Hausdorff]
+A topological space $(X,\mathcal{T})$ is called a \emph{$T_2$-space}, or \emph{Hausdorff}, if for every pair of distinct points $x,y \in X$, there exist open sets $U,V \in \mathcal{T}$ such that
+\[
+x \in U, \qquad y \in V, \qquad U \cap V = \varnothing.
+\]
+\end{definition}
+
+\begin{definition}[Regular space]
+A topological space $(X,\mathcal{T})$ is called \emph{regular} if for every closed set $F \subseteq X$ and every point $x \in X \setminus F$, there exist open sets $U,V \in \mathcal{T}$ such that
+\[
+x \in U, \qquad F \subseteq V, \qquad U \cap V = \varnothing.
+\]
+\end{definition}
+
+\begin{definition}[$T_3$ space]
+A topological space $(X,\mathcal{T})$ is called a \emph{$T_3$-space} if it is both $T_1$ and regular.
+\end{definition}
+
+\begin{definition}[Normal space]
+A topological space $(X,\mathcal{T})$ is called \emph{normal} if for any two disjoint closed sets $F,G \subseteq X$, there exist open sets $U,V \in \mathcal{T}$ such that
+\[
+F \subseteq U, \qquad G \subseteq V, \qquad U \cap V = \varnothing.
+\]
+\end{definition}
+
+\begin{definition}[$T_4$ space]
+A topological space $(X,\mathcal{T})$ is called a \emph{$T_4$-space} if it is both $T_1$ and normal.
+\end{definition}
+
 \subsection*{Basis \& Subbasis}
 
 \begin{definition}
