@@ -177,6 +177,28 @@ we conclude $x \in X\setminus U$, a contradiction.
 Therefore such open sets $U_k$ exist, and $U$ is a union of product sets.
 \end{proof}
 
+\begin{theorem}[Heine--Borel Theorem]
+For a subspace $E \subseteq \mathbb{R}^n$, the following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item $E$ is compact;
+\item every sequence in $E$ has a convergent subsequence with limit in $E$;
+\item $E$ is closed and bounded.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By the general compactness theorem for metric spaces, for any metric space the following are equivalent:
+compactness, sequential compactness, and completeness together with total boundedness.
+
+Now let $E \subseteq \mathbb{R}^n$.
+
+If $E$ is closed and bounded, then $E$ is complete (since a subspace of $\mathbb{R}^n$ is complete if and only if it is closed) and totally bounded (since a subset of $\mathbb{R}^n$ is totally bounded if and only if it is bounded). Hence $E$ is compact, and therefore every sequence in $E$ has a convergent subsequence.
+
+Conversely, if $E$ is compact, then by the same general theorem $E$ is complete and totally bounded. Since $E$ is a subspace of $\mathbb{R}^n$, completeness implies that $E$ is closed, and total boundedness implies that $E$ is bounded. Thus $E$ is closed and bounded.
+
+Therefore (i), (ii), and (iii) are equivalent.
+\end{proof}
+
 \section*{Topologies}
 
 \begin{definition}
