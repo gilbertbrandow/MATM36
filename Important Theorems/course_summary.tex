@@ -199,6 +199,128 @@ Conversely, if $E$ is compact, then by the same general theorem $E$ is complete 
 Therefore (i), (ii), and (iii) are equivalent.
 \end{proof}
 
+\begin{theorem}[Uniform Continuity Theorem]
+Let $(X,d)$ and $(Y,\rho)$ be metric spaces, and suppose that $X$ is compact.
+Then every continuous function $f:X\to Y$ is uniformly continuous.
+\end{theorem}
+
+\begin{proof}
+Suppose $f$ is not uniformly continuous. Then there exists $\varepsilon>0$ such that for every $m\in\mathbb N$ there are points $x_m,z_m\in X$ with
+\[
+d(x_m,z_m)<\frac1m
+\qquad\text{but}\qquad
+\rho\bigl(f(x_m),f(z_m)\bigr)\ge \varepsilon.
+\]
+Since $X$ is compact, the sequence $(x_m)$ has a convergent subsequence; passing to that subsequence, we may assume
+\[
+x_m\to x\in X.
+\]
+Because $d(x_m,z_m)\to 0$, also
+\[
+z_m\to x.
+\]
+By continuity of $f$ at $x$,
+\[
+f(x_m)\to f(x)
+\qquad\text{and}\qquad
+f(z_m)\to f(x).
+\]
+Hence
+\[
+\rho\bigl(f(x_m),f(z_m)\bigr)
+\le
+\rho\bigl(f(x_m),f(x)\bigr)+\rho\bigl(f(x),f(z_m)\bigr)\to 0,
+\]
+which contradicts
+\[
+\rho\bigl(f(x_m),f(z_m)\bigr)\ge \varepsilon.
+\]
+Therefore $f$ is uniformly continuous.
+\end{proof}
+
+\begin{theorem}[Continuity and boundedness of linear operators]
+Let $X$ and $Y$ be normed spaces and let $T:X\to Y$ be linear. The following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item $T$ is continuous;
+\item $T$ is continuous at $0$;
+\item $T$ is bounded, i.e.\ there exists $C>0$ such that
+\[
+\|T(x)\|\le C\|x\| \quad \text{for all } x\in X.
+\]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i)$\Rightarrow$(ii) is immediate.
+
+(ii)$\Rightarrow$(iii): Since $T$ is continuous at $0$, there exists $\delta>0$ such that
+\[
+\|x\|\le \delta \;\Rightarrow\; \|T(x)\|\le 1.
+\]
+For arbitrary $x\neq 0$, set $y=\frac{\delta}{\|x\|}x$, so $\|y\|=\delta$ and hence
+\[
+\|T(y)\|\le 1.
+\]
+By linearity,
+\[
+\|T(x)\| = \frac{\|x\|}{\delta}\|T(y)\|\le \frac{1}{\delta}\|x\|.
+\]
+Thus $T$ is bounded.
+
+(iii)$\Rightarrow$(i): If $\|T(x)\|\le C\|x\|$, then for all $x,x_0\in X$,
+\[
+\|T(x)-T(x_0)\| = \|T(x-x_0)\|\le C\|x-x_0\|,
+\]
+so $T$ is Lipschitz, hence continuous.
+\end{proof}
+
+\begin{theorem}[Principle of Uniform Boundedness]
+Let $X$ and $Y$ be Banach spaces and let $\{T_\alpha\}_{\alpha\in A}$ be a family of continuous linear operators $T_\alpha:X\to Y$. Suppose that for each $x\in X$,
+\[
+\sup_{\alpha\in A}\|T_\alpha x\| < \infty.
+\]
+Then
+\[
+\sup_{\alpha\in A}\|T_\alpha\| < \infty.
+\]
+\end{theorem}
+
+\begin{proof}
+For $n\in\mathbb N$, define
+\[
+E_n := \left\{ x\in X : \sup_{\alpha\in A}\|T_\alpha x\|\le n \right\}.
+\]
+Then each $E_n$ is closed, $E_n\subseteq E_{n+1}$, and by assumption
+\[
+X=\bigcup_{n=1}^\infty E_n.
+\]
+By the Baire Category Theorem, some $E_m$ has nonempty interior. Thus there exist $x_0\in X$ and $\varepsilon>0$ such that
+\[
+B(x_0,\varepsilon)\subseteq E_m.
+\]
+
+Let $c:=\sup_{\alpha\in A}\|T_\alpha x_0\|<\infty$. If $\|x\|<1$, then $x_0+\varepsilon x\in E_m$, hence
+\[
+\|T_\alpha(x_0+\varepsilon x)\|\le m.
+\]
+Thus
+\[
+\varepsilon\|T_\alpha x\|
+=
+\|T_\alpha(x_0+\varepsilon x)-T_\alpha(x_0)\|
+\le m + c.
+\]
+Therefore
+\[
+\|T_\alpha x\|\le \frac{m+c}{\varepsilon}
+\quad \text{for all } \|x\|<1.
+\]
+Hence $\|T_\alpha\|\le \frac{m+c}{\varepsilon}$ for all $\alpha\in A$, and so
+\[
+\sup_{\alpha\in A}\|T_\alpha\|<\infty.
+\]
+\end{proof}
+
 \section*{Topologies}
 
 \begin{definition}
