@@ -431,6 +431,46 @@ V := V_{x_1} \cap \cdots \cap V_{x_m}.
 Then $U$ and $V$ are open, $F \subseteq U$, $G \subseteq V$, and $U \cap V = \varnothing$. Hence $X$ is normal.
 \end{proof}
 
+\begin{remark}[Continuity criterion in metric spaces]
+Let $(X,\mathcal{T})$ be a topological space and $(Y,d)$ a metric space. 
+A function $f:X\to Y$ is continuous at $x\in X$ if and only if for every $\varepsilon>0$ there exists a neighbourhood $U$ of $x$ such that
+\[
+d(f(y),f(x)) < \varepsilon \quad \text{for all } y\in U.
+\]
+Equivalently, $f(U) \subseteq B(f(x),\varepsilon)$.
+\end{remark}
+
+\begin{theorem}[Uniform limit preserves continuity]
+Let $(X,\mathcal{T})$ be a topological space and $(Y,d)$ a metric space. 
+Suppose $(f_n)$ is a sequence of functions $f_n:X\to Y$ converging uniformly to $f:X\to Y$. 
+If each $f_n$ is continuous at $x\in X$, then $f$ is continuous at $x$.
+\end{theorem}
+
+\begin{proof}
+We first recall the following characterization of continuity at a point:
+$f$ is continuous at $x$ if and only if for every $\varepsilon>0$ there exists a neighbourhood $U$ of $x$ such that
+\[
+d(f(y),f(x))<\varepsilon \quad \text{for all } y\in U.
+\]
+
+Now let $\varepsilon>0$. By uniform convergence, there exists $N\in\mathbb{N}$ such that
+\[
+d(f_N(y),f(y))<\frac{\varepsilon}{3} \quad \text{for all } y\in X.
+\]
+Since $f_N$ is continuous at $x$, there exists a neighbourhood $U$ of $x$ such that
+\[
+d(f_N(y),f_N(x))<\frac{\varepsilon}{3} \quad \text{for all } y\in U.
+\]
+Then for all $y\in U$,
+\[
+d(f(y),f(x))
+\le d(f(y),f_N(y)) + d(f_N(y),f_N(x)) + d(f_N(x),f(x))
+< \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3}
+= \varepsilon.
+\]
+By the above characterization, $f$ is continuous at $x$.
+\end{proof}
+
 
 \subsection*{Basis \& Subbasis}
 
