@@ -472,6 +472,47 @@ By the above characterization, $f$ is continuous at $x$.
 \end{proof}
 
 
+\begin{theorem}
+Every metric space $(X,d)$ is a $T_4$-space.
+\end{theorem}
+
+\begin{proof}
+First, for each $x\in X$,
+\[
+\{x\} = \bigcap_{r>0} \overline{B(x,r)},
+\]
+so singletons are closed and $X$ is $T_1$.
+
+Let $E,F \subseteq X$ be disjoint closed sets. For each $x\in E$, there exists $r(x)>0$ such that
+\[
+B(x,r(x)) \cap F = \varnothing.
+\]
+Similarly, for each $y\in F$, there exists $r(y)>0$ such that
+\[
+B(y,r(y)) \cap E = \varnothing.
+\]
+
+Define
+\[
+U := \bigcup_{x\in E} B\!\left(x,\tfrac{r(x)}{2}\right),
+\quad
+V := \bigcup_{y\in F} B\!\left(y,\tfrac{r(y)}{2}\right).
+\]
+Then $U,V$ are open, $E\subseteq U$, $F\subseteq V$.
+
+Suppose $z\in U\cap V$. Then there exist $x\in E$, $y\in F$ such that
+\[
+d(x,z) < \tfrac{r(x)}{2}, \quad d(y,z) < \tfrac{r(y)}{2}.
+\]
+Hence
+\[
+d(x,y) \le d(x,z)+d(z,y) < \tfrac{r(x)+r(y)}{2} \le \max\{r(x),r(y)\}.
+\]
+Thus either $d(x,y)<r(x)$ or $d(x,y)<r(y)$, contradicting the choice of $r(x)$ or $r(y)$.
+Therefore $U\cap V=\varnothing$, and $X$ is normal.
+\end{proof}
+
+
 \subsection*{Basis \& Subbasis}
 
 \begin{definition}
