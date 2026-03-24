@@ -533,4 +533,55 @@ U
 
 \end{definition}
 
+\begin{theorem}[Basis criterion]
+A collection $\mathcal{B}$ of subsets of $X$ is a basis for a topology on $X$ if and only if:
+\begin{enumerate}[label=(\roman*)]
+\item For every $x\in X$, there exists $B\in\mathcal{B}$ such that $x\in B$;
+\item If $B_1,B_2\in\mathcal{B}$ and $x\in B_1\cap B_2$, then there exists $B_3\in\mathcal{B}$ such that
+\[
+x\in B_3 \subseteq B_1\cap B_2.
+\]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$(\Rightarrow)$ If $\mathcal{B}$ is a basis, then (i) holds since $X$ is open, and (ii) holds since $B_1\cap B_2$ is open and can be written as a union of basis elements.
+
+$(\Leftarrow)$ Suppose (i) and (ii) hold. Let $\mathcal{T}$ be the collection of all unions of sets in $\mathcal{B}$. Then $\varnothing, X \in \mathcal{T}$ and arbitrary unions are in $\mathcal{T}$.
+
+To show closure under finite intersections, let $U,V\in\mathcal{T}$ and $x\in U\cap V$. Then there exist $B_1,B_2\in\mathcal{B}$ such that
+\[
+x\in B_1\subseteq U, \quad x\in B_2\subseteq V.
+\]
+By (ii), there exists $B_3\in\mathcal{B}$ such that
+\[
+x\in B_3 \subseteq B_1\cap B_2 \subseteq U\cap V.
+\]
+Hence
+\[
+U\cap V = \bigcup_{x\in U\cap V} B_3(x),
+\]
+so $U\cap V\in\mathcal{T}$. Thus $\mathcal{T}$ is a topology and $\mathcal{B}$ is a basis.
+\end{proof}
+
+\begin{theorem}[Lindelöf's Theorem]
+Let $X$ be a second-countable topological space. Then every open cover of $X$ admits a countable subcover.
+\end{theorem}
+
+\begin{proof}
+Let $\mathcal{B} = \{B_n\}_{n\in\mathbb{N}}$ be a countable basis for $X$, and let $\mathcal{U} = \{U_\alpha\}_{\alpha\in A}$ be an open cover of $X$.
+
+For each $n\in\mathbb{N}$, since $B_n \subseteq X = \bigcup_{\alpha\in A} U_\alpha$, we may choose $\alpha(n)\in A$ such that
+\[
+B_n \subseteq U_{\alpha(n)}.
+\]
+Then the collection $\{U_{\alpha(n)}\}_{n\in\mathbb{N}}$ is countable.
+
+To see that it covers $X$, let $x\in X$. Since $\mathcal{B}$ is a basis, there exists $n$ such that $x\in B_n$. By construction, $B_n \subseteq U_{\alpha(n)}$, so $x\in U_{\alpha(n)}$. Hence
+\[
+X = \bigcup_{n=1}^\infty U_{\alpha(n)}.
+\]
+Thus $\{U_{\alpha(n)}\}_{n\in\mathbb{N}}$ is a countable subcover.
+\end{proof}
+
 \end{document}
