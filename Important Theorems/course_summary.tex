@@ -512,6 +512,58 @@ Thus either $d(x,y)<r(x)$ or $d(x,y)<r(y)$, contradicting the choice of $r(x)$ o
 Therefore $U\cap V=\varnothing$, and $X$ is normal.
 \end{proof}
 
+\begin{theorem}[Urysohn's Lemma]
+Let $E$ and $F$ be disjoint closed subsets of a normal space $X$. Then there exists a continuous function
+\[
+f:X\to [0,1]
+\]
+such that
+\[
+f|_E=0, \qquad f|_F=1.
+\]
+\end{theorem}
+
+\begin{proof}
+Set $V:=X\setminus F$, which is open and contains $E$. Using normality repeatedly, construct for each dyadic rational $r\in(0,1)$ an open set $U_r$ such that
+\[
+E\subseteq U_r \subseteq V
+\]
+and
+\[
+\overline{U_r}\subseteq U_s \qquad \text{whenever } 0<r<s<1.
+\]
+
+Define $f:X\to[0,1]$ by
+\[
+f(x)=
+\begin{cases}
+0, & x\in \bigcap_{0<r<1} U_r,\\[1mm]
+\sup\{r\in(0,1)\cap D : x\notin U_r\}, & \text{otherwise},
+\end{cases}
+\]
+where $D$ denotes the set of dyadic rationals in $(0,1)$.
+
+Then $0\le f\le 1$, and since $E\subseteq U_r$ for every $r$, we have $f=0$ on $E$. Also $U_r\subseteq X\setminus F$ for every $r$, so $f=1$ on $F$.
+
+To prove continuity, let $x\in X$ and $\varepsilon>0$. Choose dyadic rationals $r,s$ such that
+\[
+f(x)-\varepsilon < r < f(x) < s < f(x)+\varepsilon.
+\]
+Then $x\notin \overline{U_r}$ and $x\in U_s$. Hence
+\[
+W:=U_s\setminus \overline{U_r}
+\]
+is an open neighbourhood of $x$. For every $y\in W$ we have $y\notin U_r$, so $f(y)\ge r$, and $y\in U_s$, so $f(y)\le s$. Thus
+\[
+r\le f(y)\le s,
+\]
+and therefore
+\[
+|f(y)-f(x)|<\varepsilon.
+\]
+So $f$ is continuous.
+\end{proof}
+
 
 \subsection*{Basis \& Subbasis}
 
