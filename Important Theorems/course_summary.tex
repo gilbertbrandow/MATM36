@@ -829,7 +829,7 @@ Because $X$ is connected, we must have either $f^{-1}(E) = \varnothing$ or $f^{-
 In the first case, $E = \varnothing$. In the second case, $E = f(X)$. Hence $f(X)$ is connected.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}[Theorem 8.2]
 Let $\{E_\alpha\}_{\alpha \in A}$ be a family of connected subsets of a topological space $X$ such that 
 $E_\alpha \cap E_\beta \neq \varnothing$ for all $\alpha,\beta$. Then $\bigcup_{\alpha \in A} E_\alpha$ is connected.
 \end{theorem}
@@ -840,6 +840,30 @@ Pick $x \in F \cap E_{\alpha_0}$. Since $E_{\alpha_0}$ is connected, $F \cap E_{
 
 For any $\beta$, $F \cap E_\beta$ is clopen in $E_\beta$ and contains $E_{\alpha_0} \cap E_\beta \neq \varnothing$, hence $E_\beta \subseteq F$. 
 Thus $F = E$.
+\end{proof}
+
+\begin{definition}
+Let $X$ be a topological space and $x \in X$. The \emph{connected component} of $x$, denoted $C(x)$, is the union of all connected subsets of $X$ that contain $x$.
+\end{definition}
+
+\begin{theorem}
+$C(x)$ is connected and is the largest connected subset of $X$ containing $x$.
+\end{theorem}
+
+\begin{theorem}[Theorem 8.3]
+Two connected components of $X$ either coincide or are disjoint. Hence, the connected components form a partition of $X$.
+\end{theorem}
+
+\begin{theorem}[Theorem 8.4]
+Any interval in $\mathbb{R}$ (closed, open, or half-open; finite or infinite) is connected.
+\end{theorem}
+
+\begin{proof}
+It suffices to show that $[0,1]$ is connected. Let $E \subseteq [0,1]$ be clopen and assume $E \neq \varnothing$. Set
+\[
+t = \sup E.
+\]
+Since $E$ is closed, $t \in E$. If $t < 1$, then since $E$ is open, there exists $\varepsilon > 0$ such that $(t, t+\varepsilon) \subseteq E$, contradicting the definition of $t$. Hence $E = [0,1]$.
 \end{proof}
 
 
