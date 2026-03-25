@@ -597,7 +597,6 @@ f = \lim_{n\to\infty} (g_0+\cdots+g_n) = h,
 and $h$ is bounded. Thus $h$ is the desired extension.
 \end{proof}
 
-
 \subsection*{Basis \& Subbasis}
 
 \begin{definition}
@@ -709,5 +708,94 @@ X = \bigcup_{n=1}^\infty U_{\alpha(n)}.
 \]
 Thus $\{U_{\alpha(n)}\}_{n\in\mathbb{N}}$ is a countable subcover.
 \end{proof}
+
+\subsection*{Compactness}
+\begin{theorem}
+Let $S$ be a compact subset of a Hausdorff space $X$. For each $x \in X \setminus S$, there exist disjoint open sets $U,V \subseteq X$ such that
+\[
+x \in U, \qquad S \subseteq V.
+\]
+\end{theorem}
+
+\begin{proof}
+For each $y \in S$, since $X$ is Hausdorff, there exist disjoint open sets $U_y$ and $V_y$ such that
+\[
+x \in U_y, \qquad y \in V_y.
+\]
+Then $\{V_y\}_{y\in S}$ is an open cover of $S$. By compactness, there exist $y_1,\dots,y_n \in S$ such that
+\[
+S \subseteq V_{y_1} \cup \cdots \cup V_{y_n} =: V.
+\]
+Let
+\[
+U := U_{y_1} \cap \cdots \cap U_{y_n}.
+\]
+Then $U$ is open, $x \in U$, and $U \cap V = \varnothing$.
+\end{proof}
+
+\begin{corollary}
+A compact subset of a Hausdorff space is closed.
+\end{corollary}
+
+\begin{proof}
+Let $S \subseteq X$ be compact and $x \in X \setminus S$. By the lemma, there exists an open set $U$ containing $x$ with $U \cap S = \varnothing$. Hence $X \setminus S$ is open, so $S$ is closed.
+\end{proof}
+
+\begin{theorem}[Theorem 6.5]
+Every compact Hausdorff space is normal.
+\end{theorem}
+
+\begin{proof}
+Let $S,T \subseteq X$ be disjoint closed sets. Since $X$ is compact, $S$ and $T$ are compact. For each $x\in T$, by the lemma on separating a point from a compact set, there exist disjoint open sets $U_x,V_x$ such that
+\[
+x\in U_x, \qquad S\subseteq V_x.
+\]
+The family $\{U_x\}_{x\in T}$ is an open cover of $T$, so by compactness there exist $x_1,\dots,x_n\in T$ such that
+\[
+T\subseteq U_{x_1}\cup\cdots\cup U_{x_n}=:U.
+\]
+Set
+\[
+V:=V_{x_1}\cap\cdots\cap V_{x_n}.
+\]
+Then $U$ and $V$ are open, $T\subseteq U$, $S\subseteq V$, and $U\cap V=\varnothing$. Hence $X$ is normal.
+\end{proof}
+
+\begin{theorem}[Theorem 6.6]
+Let $f:X\to Y$ be continuous, where $X$ is compact and $Y$ is a topological space. Then $f(X)$ is compact in $Y$.
+\end{theorem}
+
+\begin{proof}
+Let $\{U_\alpha\}_{\alpha\in A}$ be an open cover of $f(X)$. Then
+\[
+X=\bigcup_{\alpha\in A} f^{-1}(U_\alpha),
+\]
+and each $f^{-1}(U_\alpha)$ is open in $X$ by continuity of $f$. Since $X$ is compact, there exist $\alpha_1,\dots,\alpha_n\in A$ such that
+\[
+X=f^{-1}(U_{\alpha_1})\cup\cdots\cup f^{-1}(U_{\alpha_n}).
+\]
+Applying $f$, we get
+\[
+f(X)\subseteq U_{\alpha_1}\cup\cdots\cup U_{\alpha_n}.
+\]
+Thus $\{U_{\alpha_1},\dots,U_{\alpha_n}\}$ is a finite subcover of $f(X)$, so $f(X)$ is compact.
+\end{proof}
+
+\begin{theorem}[Theorem 6.7]
+Let $f:X \to Y$ be a continuous map from a compact space $X$ to a Hausdorff space $Y$. If $f$ is one-to-one, then $f$ is a homeomorphism of $X$ onto $f(X)$.
+\end{theorem}
+
+\begin{proof}
+Since $f$ is continuous and bijective onto $f(X)$, it suffices to show that $f^{-1}:f(X)\to X$ is continuous, or equivalently that $f(U)$ is open in $f(X)$ whenever $U$ is open in $X$.
+
+Let $U\subseteq X$ be open. Then $X\setminus U$ is closed in $X$, hence compact. By continuity, $f(X\setminus U)$ is compact in $Y$, and since $Y$ is Hausdorff, it is closed in $Y$. Therefore it is closed in $f(X)$.
+
+But
+\[
+f(X\setminus U) = f(X)\setminus f(U)
+\]
+since $f$ is injective. Hence $f(U)$ is open in $f(X)$, and $f^{-1}$ is continuous. Thus $f$ is a homeomorphism onto $f(X)$.
+\end{proof}
+
 
 \end{document}
