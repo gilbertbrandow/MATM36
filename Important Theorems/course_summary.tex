@@ -564,6 +564,39 @@ and therefore
 So $f$ is continuous.
 \end{proof}
 
+\begin{theorem}[Tietze Extension Theorem]
+Let $X$ be a normal topological space, $Y \subseteq X$ closed, and let 
+$f:Y \to \mathbb{R}$ be bounded and continuous. Then there exists a bounded continuous function 
+$h:X \to \mathbb{R}$ such that $h|_Y = f$.
+\end{theorem}
+
+\begin{proof}
+Assume $|f|\le c_0$ on $Y$. Using Urysohn's Lemma, construct a continuous function $g_0:X\to\mathbb{R}$ such that
+\[
+|g_0|\le \tfrac{c_0}{3} \quad \text{on } X, \qquad |f-g_0|\le \tfrac{2c_0}{3} \quad \text{on } Y.
+\]
+Inductively, having defined $g_0,\dots,g_{n-1}$, set
+\[
+c_n := \sup_{y\in Y} |f(y)-g_0(y)-\cdots-g_{n-1}(y)|.
+\]
+Again by Urysohn, construct $g_n$ such that
+\[
+|g_n|\le \tfrac{c_n}{3} \quad \text{on } X, \qquad 
+|f-g_0-\cdots-g_n|\le \tfrac{2c_n}{3} \quad \text{on } Y.
+\]
+Then $c_n \le (2/3)^n c_0$ and $|g_n|\le (2/3)^n c_0/3$.
+
+The series $\sum g_n$ converges uniformly on $X$ to a continuous function
+\[
+h := \sum_{n=0}^\infty g_n.
+\]
+Moreover, on $Y$,
+\[
+f = \lim_{n\to\infty} (g_0+\cdots+g_n) = h,
+\]
+and $h$ is bounded. Thus $h$ is the desired extension.
+\end{proof}
+
 
 \subsection*{Basis \& Subbasis}
 
