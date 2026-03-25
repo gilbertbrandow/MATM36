@@ -866,5 +866,59 @@ t = \sup E.
 Since $E$ is closed, $t \in E$. If $t < 1$, then since $E$ is open, there exists $\varepsilon > 0$ such that $(t, t+\varepsilon) \subseteq E$, contradicting the definition of $t$. Hence $E = [0,1]$.
 \end{proof}
 
+\subsection*{Path Connectedness}
+\begin{theorem}[Lemma 9.1]
+The relation ``there is a path in $X$ from $x$ to $y$'' is an equivalence relation on $X$.
+\end{theorem}
+
+\begin{proof}
+We verify the three properties:
+
+\begin{enumerate}
+    \item[(i)] \textbf{Reflexive:} For any $x \in X$, the constant map
+    \[
+    \alpha : [0,1] \to X, \qquad \alpha(s)=x
+    \]
+    is a path from $x$ to $x$.
+
+    \item[(ii)] \textbf{Symmetric:} If $\alpha$ is a path from $x$ to $y$, then
+    \[
+    \beta : [0,1] \to X, \qquad \beta(s)=\alpha(1-s)
+    \]
+    is a path from $y$ to $x$.
+
+    \item[(iii)] \textbf{Transitive:} If $\alpha$ is a path from $x$ to $y$ and $\beta$ is a path from $y$ to $z$, define
+    \[
+    \gamma(s)=
+    \begin{cases}
+    \alpha(2s), & 0 \le s \le \tfrac12,\\[1mm]
+    \beta(2s-1), & \tfrac12 \le s \le 1.
+    \end{cases}
+    \]
+    Then $\gamma$ is a path from $x$ to $z$.
+\end{enumerate}
+
+Hence the relation is an equivalence relation.
+\end{proof}
+
+\begin{theorem}[Theorem 9.2]
+Every path-connected space is connected.
+\end{theorem}
+
+\begin{proof}
+Fix $x_0 \in X$. For each $x \in X$, let $\gamma_x:[0,1]\to X$ be a path from $x_0$ to $x$. Since $[0,1]$ is connected and $\gamma_x$ is continuous, $\gamma_x([0,1])$ is connected. Also, each $\gamma_x([0,1])$ contains $x_0$. Hence
+\[
+X=\bigcup_{x\in X}\gamma_x([0,1])
+\]
+is a union of connected subsets with a common point, so $X$ is connected.
+\end{proof}
+
+\begin{corollary}[Corollory 9.3]
+Each connected component of a topological space is a union of path components.
+\end{corollary}
+
+\begin{proof}
+A path component is path-connected, hence connected by the theorem. Therefore each path component is contained in some connected component. It follows that a connected component is the union of all path components contained in it.
+\end{proof}
 
 \end{document}
