@@ -797,5 +797,50 @@ f(X\setminus U) = f(X)\setminus f(U)
 since $f$ is injective. Hence $f(U)$ is open in $f(X)$, and $f^{-1}$ is continuous. Thus $f$ is a homeomorphism onto $f(X)$.
 \end{proof}
 
+\subsection*{Locally Compact}
+\begin{theorem}[One-point compactification]
+Let $X$ be a locally compact Hausdorff space. Then there exists a space
+$Y = X \cup \{\infty\}$ and a topology on $Y$ such that:
+
+\begin{itemize}
+    \item $Y$ is compact and Hausdorff,
+    \item the subspace topology on $X$ coincides with the original topology,
+    \item the topology is uniquely determined.
+\end{itemize}
+
+The open sets in $Y$ are:
+\begin{itemize}
+    \item all open sets of $X$,
+    \item all sets of the form $U \cup \{\infty\}$ where $X \setminus U$ is compact in $X$.
+\end{itemize}
+\end{theorem}
+
+\subsection*{Connected}
+
+\begin{theorem}[Theorem 8.1]
+Let $f$ be a continuous function from a connected topological space $X$ to a topological space $Y$. Then $f(X)$ is connected.
+\end{theorem}
+
+\begin{proof}
+Let $E \subseteq f(X)$ be both open and closed in $f(X)$. Then $f^{-1}(E)$ is both open and closed in $X$ since $f$ is continuous. 
+
+Because $X$ is connected, we must have either $f^{-1}(E) = \varnothing$ or $f^{-1}(E) = X$. 
+
+In the first case, $E = \varnothing$. In the second case, $E = f(X)$. Hence $f(X)$ is connected.
+\end{proof}
+
+\begin{theorem}
+Let $\{E_\alpha\}_{\alpha \in A}$ be a family of connected subsets of a topological space $X$ such that 
+$E_\alpha \cap E_\beta \neq \varnothing$ for all $\alpha,\beta$. Then $\bigcup_{\alpha \in A} E_\alpha$ is connected.
+\end{theorem}
+
+\begin{proof}
+Let $E = \bigcup_\alpha E_\alpha$ and let $F \subseteq E$ be clopen with $F \neq \varnothing$. 
+Pick $x \in F \cap E_{\alpha_0}$. Since $E_{\alpha_0}$ is connected, $F \cap E_{\alpha_0} = E_{\alpha_0}$, so $E_{\alpha_0} \subseteq F$.
+
+For any $\beta$, $F \cap E_\beta$ is clopen in $E_\beta$ and contains $E_{\alpha_0} \cap E_\beta \neq \varnothing$, hence $E_\beta \subseteq F$. 
+Thus $F = E$.
+\end{proof}
+
 
 \end{document}
