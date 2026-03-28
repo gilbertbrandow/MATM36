@@ -12,6 +12,7 @@
 \date{}
 
 \newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
 \newtheorem{corollary}{Corollary}
 \newtheorem{definition}{Definition}
 \newtheorem{remark}{Remark}
@@ -795,6 +796,88 @@ But
 f(X\setminus U) = f(X)\setminus f(U)
 \]
 since $f$ is injective. Hence $f(U)$ is open in $f(X)$, and $f^{-1}$ is continuous. Thus $f$ is a homeomorphism onto $f(X)$.
+\end{proof}
+
+\subsubsection*{Arzelà--Ascoli Theorem}
+
+\begin{lemma}
+Let $(f_n) \subset C(X)$ be uniformly bounded and equicontinuous.
+Then there exists a subsequence $(f_{n_k})$ which converges uniformly on $X$.
+\end{lemma}
+
+\begin{proof}[Proof sketch of the lemma]
+Fix $m\in\mathbb{N}$. By equicontinuity, for each $x\in X$ there exists an open neighbourhood
+$U_{x,m}$ such that
+\[
+|f_n(y)-f_n(x)|<\frac1m
+\qquad \text{for all } y\in U_{x,m},\; n\in\mathbb{N}.
+\]
+Since $X$ is compact, finitely many of these sets cover $X$:
+\[
+X = U_{x_1,m}\cup \cdots \cup U_{x_{r_m},m}.
+\]
+Rename all points appearing in these finite covers as a sequence $(y_j)_{j\ge1}$.
+
+Because $(f_n(y_1))$ is bounded, it has a convergent subsequence.
+From that subsequence, extract one for which $(f_n(y_2))$ also converges, and continue.
+By the diagonal procedure, we obtain a subsequence $(f_{n_k})$ such that
+$(f_{n_k}(y_j))$ converges for every $j$.
+
+It remains to show that $(f_{n_k})$ is uniformly Cauchy. Let $\varepsilon>0$, and choose
+$m$ so large that $3/m<\varepsilon$. Since $X$ is covered by finitely many sets
+$U_{x_1,m},\dots,U_{x_{r_m},m}$, and since $(f_{n_k}(x_i))$ converges for each $i$,
+there exists $N$ such that for all $k,\ell\ge N$,
+\[
+|f_{n_k}(x_i)-f_{n_\ell}(x_i)|<\frac1m
+\qquad \text{for } i=1,\dots,r_m.
+\]
+Now for any $x\in X$, choose $i$ such that $x\in U_{x_i,m}$. Then
+\[
+|f_{n_k}(x)-f_{n_\ell}(x)|
+\le |f_{n_k}(x)-f_{n_k}(x_i)|
+ + |f_{n_k}(x_i)-f_{n_\ell}(x_i)|
+ + |f_{n_\ell}(x_i)-f_{n_\ell}(x)|
+< \frac3m < \varepsilon.
+\]
+Hence $(f_{n_k})$ is uniformly Cauchy, and therefore converges uniformly on $X$.
+\end{proof}
+
+
+\begin{theorem}[Arzelà--Ascoli]
+Let $X$ be a compact topological space and let $\mathcal{F} \subset C(X)$.
+Then $\mathcal{F}$ is relatively compact in $(C(X),\|\cdot\|_\infty)$ if and only if
+$\mathcal{F}$ is uniformly bounded and equicontinuous.
+\end{theorem}
+
+\begin{proof}
+($\Leftarrow$) Assume $\mathcal{F}$ is uniformly bounded and equicontinuous.
+Then by the lemma, every sequence in $\mathcal{F}$ has a uniformly convergent subsequence.
+Hence $\mathcal{F}$ is relatively compact.
+
+($\Rightarrow$) Assume $\mathcal{F}$ is relatively compact. Then $\mathcal{F}$ is totally bounded.
+
+Uniform boundedness:  
+For $\varepsilon=1$, there exist $f_1,\dots,f_n$ such that
+\[
+\mathcal{F} \subset \bigcup_{k=1}^n B(f_k,1).
+\]
+Hence $\|f\|_\infty \le 1 + \max_k \|f_k\|_\infty$ for all $f \in \mathcal{F}$.
+
+Equicontinuity:  
+Let $\varepsilon>0$ and choose $f_1,\dots,f_n$ such that
+\[
+\mathcal{F} \subset \bigcup_{k=1}^n B(f_k,\varepsilon).
+\]
+Fix $x\in X$. Since each $f_k$ is continuous, there exists a neighbourhood $U$ of $x$
+such that
+\[
+|f_k(y)-f_k(x)|<\varepsilon \quad \forall y\in U,\; k=1,\dots,n.
+\]
+If $f\in\mathcal{F}$, choose $k$ with $\|f-f_k\|_\infty<\varepsilon$. Then
+\[
+|f(y)-f(x)|<3\varepsilon \quad \forall y\in U.
+\]
+Thus $\mathcal{F}$ is equicontinuous.
 \end{proof}
 
 \subsection*{Locally Compact}
