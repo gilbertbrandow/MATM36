@@ -812,13 +812,17 @@ $U_{x,m}$ such that
 |f_n(y)-f_n(x)|<\frac1m
 \qquad \text{for all } y\in U_{x,m},\; n\in\mathbb{N}.
 \]
-By compactness, for each $m$ there exist points $x_1^{(m)},\dots,x_{r_m}^{(m)}$ such that
+By compactness, for each $m$ there exist points $x_{m,1},\dots,x_{m,r_m}$ such that
 \[
-X=\bigcup_{i=1}^{r_m} U_{x_i^{(m)},m}.
+X=\bigcup_{i=1}^{r_m} U_{x_{m,i},m}.
 \]
-Collect all these points into a countable set
+Let
 \[
-A=\{a_1,a_2,a_3,\dots\}.
+A := \bigcup_{m=1}^\infty \{x_{m,1}, \dots, x_{m,r_m}\}.
+\]
+Since this is a countable union of finite sets, we may write
+\[
+A = \{a_1, a_2, a_3, \dots\}.
 \]
 
 Since $(f_n)$ is uniformly bounded, for each $j$ the sequence $(f_n(a_j))$ is bounded,
@@ -827,52 +831,41 @@ hence admits a convergent subsequence. We now construct nested subsequences
 (f_n)\supset (f_n^{(1)})\supset (f_n^{(2)})\supset (f_n^{(3)})\supset \cdots
 \]
 such that $(f_n^{(k)}(a_k))$ converges for each $k$.
-
-We write these subsequences as rows:
 \[
 \begin{aligned}
-(f_n^{(1)}) &= (f_{n_1^{(1)}},\, f_{n_2^{(1)}},\, f_{n_3^{(1)}},\, \dots), \\
-(f_n^{(2)}) &= (f_{n_1^{(2)}},\, f_{n_2^{(2)}},\, f_{n_3^{(2)}},\, \dots), \\
-(f_n^{(3)}) &= (f_{n_1^{(3)}},\, f_{n_2^{(3)}},\, f_{n_3^{(3)}},\, \dots), \\
+(f_n^{(1)}) &= (f_{n_1}^{(1)},\, f_{n_2}^{(1)},\, f_{n_3}^{(1)},\, \dots), \\
+(f_n^{(2)}) &= (f_{n_1}^{(2)},\, f_{n_2}^{(2)},\, f_{n_3}^{(2)},\, \dots), \\
+(f_n^{(3)}) &= (f_{n_1}^{(3)},\, f_{n_2}^{(3)},\, f_{n_3}^{(3)},\, \dots), \\
 &\ \vdots
 \end{aligned}
 \]
-where each row is a subsequence of the previous one.
+where each row is a subsequence of the previous one. \\
 
-Define the diagonal subsequence by
-\[
-g_k := f_{n_k^{(k)}}.
-\]
-
-Fix $j$. For all $k\ge j$, the term $g_k$ lies in the subsequence $(f_n^{(j)})$,
+Define the diagonal subsequence by $g_k := f_{n_k^{(k)}}.$ Fix~$j$. For all $k\ge j$, the term $g_k$ lies in the subsequence $(f_n^{(j)})$,
 hence $(g_k(a_j))$ converges. Thus $(g_k(a_j))$ converges for every $a_j\in A$.
 
-We now show that $(g_k)$ is uniformly Cauchy. Let $\varepsilon>0$ and choose $m$ such that
-\[
-\frac{3}{m}<\varepsilon.
-\]
+We now show that $(g_k)$ is uniformly Cauchy. Let $\varepsilon>0$ and choose $m$ such that $\frac{3}{m}<\varepsilon.$
 From the finite cover
 \[
-X=\bigcup_{i=1}^{r_m} U_{x_i^{(m)},m},
+X=\bigcup_{i=1}^{r_m} U_{x_{m,i},m},
 \]
-and since each $x_i^{(m)}\in A$, the sequences $(g_k(x_i^{(m)}))$ converge. Hence there exists $N$
+and since each $x_{m,i}\in A$, the sequences $(g_k(x_{m,i}))$ converge. Hence there exists $N$
 such that for all $k,\ell\ge N$,
 \[
-|g_k(x_i^{(m)})-g_\ell(x_i^{(m)})|<\frac1m
+|g_k(x_{m,i})-g_\ell(x_{m,i})|<\frac1m
 \qquad \text{for } i=1,\dots,r_m.
 \]
 
-Now let $x\in X$. Choose $i$ such that $x\in U_{x_i^{(m)},m}$. Then
+Now let $x\in X$. Choose $i$ such that $x\in U_{x_{m,i},m}$. Then
 \[
-|g_k(x)-g_\ell(x)|
-\le |g_k(x)-g_k(x_i^{(m)})|
-+ |g_k(x_i^{(m)})-g_\ell(x_i^{(m)})|
-+ |g_\ell(x_i^{(m)})-g_\ell(x)|
-< \frac1m+\frac1m+\frac1m
-= \frac{3}{m}
-< \varepsilon.
+\begin{aligned}
+|g_k(x)-g_\ell(x)| 
+&\le |g_k(x)-g_k(x_{m,i})| + |g_k(x_{m,i})-g_\ell(x_{m,i})| + |g_\ell(x_{m,i})-g_\ell(x)| \\
+&< \frac1m+\frac1m+\frac1m = \frac{3}{m} \\
+&< \varepsilon
+\end{aligned}
 \]
-Thus $(g_k)$ is uniformly Cauchy, hence converges uniformly on $X$.
+Since $x$ arbitrary $(g_k)$ is uniformly Cauchy, hence converges uniformly on $X$.
 \end{proof}
 
 \begin{theorem}[Arzelà--Ascoli]
