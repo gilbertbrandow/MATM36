@@ -1209,5 +1209,57 @@ m < x.
 Let $P$ be a partially ordered set. If each totally ordered subset of $P$ has an upper bound, then $P$ has a maximal element.
 \end{lemma}
 
+\subsection*{Infinite Product Spaces}
+
+\begin{theorem}[12.3, Alexander Subbase Theorem]
+Let $Y$ be a topological space and let $\mathcal{S}$ be a subbase for the topology of $Y$. If every open cover of $Y$ by sets in $\mathcal{S}$ has a finite subcover, then $Y$ is compact.
+\end{theorem}
+
+\begin{proof}
+Let $\mathcal{C}$ be an open cover of $Y$ such that no finite subfamily of $\mathcal{C}$ covers $Y$. It suffices to show that there exists a cover of $Y$ by sets in $\mathcal{S}$ that has no finite subcover.
+
+Consider families $\mathcal{B}$ of open subsets of $Y$ such that $\mathcal{C} \subset \mathcal{B}$ and such that no finite collection of sets in $\mathcal{B}$ covers $Y$. The aggregate of such families forms a partially ordered set, with the ordering of inclusion. Let $\{\mathcal{B}_\beta\}_{\beta\in B}$ be a totally ordered subset of $\mathcal{B}$. Let $\mathcal{B}_0$ be the family of subsets of $Y$ that is the union of the $\mathcal{B}_\beta$’s. We claim that $\mathcal{B}_0 \in \mathcal{B}$, that is, that no finite collection of sets in $\mathcal{B}_0$ covers $Y$. Indeed, any finite collection of sets in $\mathcal{B}_0$ is included in one of the $\mathcal{B}_\beta$’s, because of the total ordering, and no finite family of sets in any $\mathcal{B}_\beta$ covers $Y$. (Compare this argument with the corresponding proof that every cover has a basis.) Evidently $\mathcal{B}_0$ is an upper bound for $\{\mathcal{B}_\beta\}$. Hence the hypothesis of Zorn’s Lemma are met. By Zorn’s Lemma, there is a maximal element $\mathcal{B}_0$ in $\mathcal{B}$.
+
+It suffices now to show that the family $\mathcal{S}$ covers $Y$. Indeed, by the defining property of $\mathcal{B}_0$, no finite subfamily of $\mathcal{B}_0$ covers $Y$.
+
+Let $x \in Y$. It suffices to show that there exists $V \in \mathcal{S}$ such that $x \in V$. Choose $U \in \mathcal{B}_0$ such that $x \in U$. Since $\mathcal{S}$ is a subbase, there exist $V_1,\dots,V_n \in \mathcal{S}$ such that
+\[
+x \in V_1 \cap \cdots \cap V_n \subset U.
+\]
+Suppose that no $V_j$ belongs to $\mathcal{B}_0$. Because of the maximality of $\mathcal{B}_0$, there exist for each $j$ a finite number of open sets
+\[
+W_{j1},\dots,W_{jk_j} \in \mathcal{B}_0
+\]
+such that
+\[
+W_{j1} \cup \cdots \cup W_{jk_j} \cup V_j
+\]
+covers $Y$. Otherwise we could add $V_j$ to $\mathcal{B}_0$, contradicting the maximality of $\mathcal{B}_0$. Then
+\[
+(V_1 \cap \cdots \cap V_n) \cup \bigcup_{j=1}^n \bigcup_{i=1}^{k_j} W_{ji}
+\]
+covers $Y$. Hence
+\[
+U \cup \bigcup_{j=1}^n \bigcup_{i=1}^{k_j} W_{ji}
+\]
+covers $Y$. This gives a finite cover of $Y$ by sets in $\mathcal{B}_0$, contradicting the fact that $\mathcal{B}_0$ belongs to $\mathcal{B}$. We conclude that some $V_j$ belongs to $\mathcal{B}_0$, and we take this $V_j$ to cover $x$.
+\end{proof}
+
+\begin{theorem}[12.4, Tychonoff's Theorem]
+Any product of compact spaces is compact.
+\end{theorem}
+
+\begin{proof}
+Let $X=\prod_{\alpha} X_\alpha$, where each $X_\alpha$ is compact. Let $\mathcal{S}$ be a family of subbasic sets of the form
+\[
+\pi_\alpha^{-1}(U_\alpha),
+\]
+where $U_\alpha$ is an open subset of $X_\alpha$. Suppose that no finite subfamily of $\mathcal{S}$ covers $X$. In view of the Alexander Subbase Theorem, it suffices to show that $\mathcal{S}$ does not cover $X$.
+
+Fix an index $\beta$ and consider the subbasic sets in $\mathcal{S}$ of the form $\pi_\beta^{-1}(V)$, where $V$ is an open subset of $X_\beta$. The aggregate of such open sets $V$ cannot cover $X_\beta$. Otherwise we could extract a finite subcover $\{V_1,\dots,V_m\}$ of $X_\beta$, and the corresponding sets $\pi_\beta^{-1}(V_1),\dots,\pi_\beta^{-1}(V_m)$ would cover $X$, contradicting our hypothesis on $\mathcal{S}$. Choose a point $x_\beta \in X_\beta$ such that $x_\beta$ is not included in the union of the $V$’s.
+
+The various choices $x_\beta$ determine a point $x \in \prod_\alpha X_\alpha$, which is evidently not included in any of the sets in $\mathcal{S}$.
+\end{proof}
+
 
 \end{document}
