@@ -1029,4 +1029,148 @@ Each connected component of a topological space is a union of path components.
 A path component is path-connected, hence connected by the theorem. Therefore each path component is contained in some connected component. It follows that a connected component is the union of all path components contained in it.
 \end{proof}
 
+\subsection*{Finite Product Spaces}
+
+\begin{theorem}[10.1]
+Let $X$ be the product of the topological spaces $X_1,\dots,X_n$, and let $\pi_j$ be the projection of $X$ onto $X_j$. The product topology for $X$ is the smallest topology for which each of the projections $\pi_j$ is continuous.
+\end{theorem}
+
+\begin{proof}
+Let $\mathcal{T}$ be another topology for $X$ such that the projections $\pi_j$ are $\mathcal{T}$-continuous. Let $U_1,\dots,U_n$ be open subsets of $X_1,\dots,X_n$, respectively. Then each $\pi_j^{-1}(U_j)$ belongs to $\mathcal{T}$. Since
+\[
+\pi_1^{-1}(U_1)\cap\cdots\cap\pi_n^{-1}(U_n)=U_1\times\cdots\times U_n,
+\]
+the basic set $U_1\times\cdots\times U_n$ belongs to $\mathcal{T}$ and $\mathcal{T}$ includes the product topology.
+\end{proof}
+
+\begin{theorem}[10.2]
+Let $X=X_1\times\cdots\times X_n$ be the product of the topological spaces $X_1,\dots,X_n$. Then each projection $\pi_j$ is an open map of $X$ onto $X_j$.
+\end{theorem}
+
+\begin{proof}
+If $U=U_1\times\cdots\times U_n$ is a nonempty basic open set, then $\pi_j(U)=U_j$ is open. Since maps preserve unions, the image of any open set is open.
+\end{proof}
+
+\begin{theorem}[10.3]
+Let $E$ be a topological space and let $f$ be a function from $E$ to the product
+\[
+X=X_1\times\cdots\times X_n.
+\]
+Then $f$ is continuous if and only if each $\pi_j\circ f$ is continuous, $1\le j\le n$.
+\end{theorem}
+
+\begin{proof}
+If $f$ is continuous, then $\pi_j\circ f$ is also continuous since the composition of continuous functions is continuous.
+
+Conversely, suppose that each $\pi_j\circ f$ is continuous. Let
+\[
+U=U_1\times\cdots\times U_n
+\]
+be a basic open set in $X$. Then
+\[
+f^{-1}(U)=(\pi_1\circ f)^{-1}(U_1)\cap\cdots\cap(\pi_n\circ f)^{-1}(U_n)
+\]
+is a finite intersection of open sets and hence is open. Since inverses of functions preserve unions, the inverse image of any open set is open. Hence $f$ is continuous.
+\end{proof}
+
+\begin{theorem}[10.4]
+If $X_1,\dots,X_n$ are Hausdorff spaces, then $X=X_1\times\cdots\times X_n$ is Hausdorff.
+\end{theorem}
+
+\begin{proof}
+Let $x=(x_1,\dots,x_n)$ and $y=(y_1,\dots,y_n)$ be distinct points of $X$. Choose an index $j$ such that $x_j\ne y_j$. Let $U_j$ and $V_j$ be disjoint open neighborhoods of $x_j$ and $y_j$, respectively, in $X_j$. Then $\pi_j^{-1}(U_j)$ and $\pi_j^{-1}(V_j)$ are disjoint open neighborhoods of $x$ and $y$, respectively, in $X$.
+\end{proof}
+
+\begin{theorem}[10.5]
+If $X_j$ is a path-connected topological space, $1\le j\le n$, then $X=X_1\times\cdots\times X_n$ is path-connected.
+\end{theorem}
+
+\begin{proof}
+Let $x=(x_1,\dots,x_n)$ and $y=(y_1,\dots,y_n)$ be points of $X$. For $1\le j\le n$, let
+\[
+\gamma_j:[0,1]\to X_j
+\]
+be a path from $x_j$ to $y_j$. Then the path
+\[
+\gamma:[0,1]\to X,\qquad
+\gamma(t)=(\gamma_1(t),\dots,\gamma_n(t)),\qquad 0\le t\le 1,
+\]
+is a path from $x$ to $y$. Hence $X$ is path-connected.
+\end{proof}
+
+\begin{theorem}[10.6]
+If $X_j$ is a connected topological space, $1\le j\le n$, then $X=X_1\times\cdots\times X_n$ is also connected.
+\end{theorem}
+
+\begin{proof}
+Let $E$ be a closed and open subset of $X$. Replacing $E$ by its complement, if necessary, we can assume that $E\ne\varnothing$. We must show that $E=X$.
+
+Let $z=(z_1,\dots,z_n)\in E$ and let $y=(y_1,\dots,y_n)\in X$. The intersection
+\[
+E\cap (X_1\times\{z_2\}\times\cdots\times\{z_n\})
+\]
+is a relatively open and closed subset of the coordinate slice, which includes $z$. Since $X_1$ is connected, so is the coordinate slice. It follows that $E$ must include the entire coordinate slice. In particular,
+\[
+(y_1,z_2,\dots,z_n)\in E.
+\]
+
+Now we repeat this argument in the second coordinate and continue until eventually we conclude that $y\in E$. Since $y\in X$ is arbitrary, we obtain $E=X$.
+\end{proof}
+
+\begin{lemma}[10.7]
+Let $Y$ be a topological space and let $\mathcal{B}$ be a base for the topology of $Y$. If every open cover of $Y$ by sets in $\mathcal{B}$ has a finite subcover, then $Y$ is compact.
+\end{lemma}
+
+\begin{proof}
+Let $\{U_\beta\}_{\beta\in B}$ be an open cover of $Y$. For each $y\in Y$, choose $V_y\in\mathcal{B}$ and an index $\beta$ such that
+\[
+y\in V_y\subset U_\beta.
+\]
+The family $\{V_y:y\in Y\}$ forms an open cover of $Y$ by sets in $\mathcal{B}$. By hypothesis, there exist a finite number of the $V_y$'s that cover $Y$. Since each of these $V_y$'s is contained in at least one of the $U_\beta$'s, we obtain a finite number of the $U_\beta$'s that cover $Y$. Hence $Y$ is compact.
+\end{proof}
+
+\begin{theorem}[10.8, Tychonoff's Theorem, finite case]
+If $X_1,\dots,X_n$ are compact spaces, then $X_1\times\cdots\times X_n$ is compact.
+\end{theorem}
+
+\begin{proof}
+It suffices to prove the theorem in the case where $n=2$, and so we consider only
+\[
+X=X_1\times X_2.
+\]
+Let $\mathcal{C}$ be a cover of $X_1\times X_2$ by rectangular open sets of the form $U\times V$, where $U$ is open in $X_1$ and $V$ is open in $X_2$. By Lemma 10.7, it suffices to show that the cover $\mathcal{C}$ has a finite subcover.
+
+Fix $z\in X_2$. The coordinate slice $X_1\times\{z\}$ is compact. Hence there are a finite number of sets
+\[
+U_1\times V_1,\dots,U_m\times V_m\in\mathcal{C}
+\]
+that cover $X_1\times\{z\}$. We can assume that $z\in V_j$ for all $j$, $1\le j\le m$. Then
+\[
+V(z)=V_1\cap\cdots\cap V_m
+\]
+is an open neighborhood of $z$ in $X_2$. Furthermore,
+\[
+\pi_2^{-1}(V(z))
+\]
+is covered by a finite number of sets in $\mathcal{C}$, namely the sets
+\[
+U_j\times V_j,\qquad 1\le j\le m.
+\]
+
+The sets $\{V(z):z\in X_2\}$ form an open cover of $X_2$. Since $X_2$ is compact, there exist
+\[
+z_1,\dots,z_k\in X_2
+\]
+such that
+\[
+X_2=V(z_1)\cup\cdots\cup V(z_k).
+\]
+Then
+\[
+X=\pi_2^{-1}(V(z_1))\cup\cdots\cup \pi_2^{-1}(V(z_k)).
+\]
+Since each $\pi_2^{-1}(V(z_j))$ can be covered by a finite number of sets in $\mathcal{C}$, and since the aggregate of these sets covers $X$, $\mathcal{C}$ has a finite subcover.
+\end{proof}
+
+
 \end{document}
