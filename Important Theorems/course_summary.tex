@@ -801,60 +801,91 @@ since $f$ is injective. Hence $f(U)$ is open in $f(X)$, and $f^{-1}$ is continuo
 \subsubsection*{Arzelà--Ascoli Theorem}
 
 \begin{lemma}
-Let $(f_n) \subset C(X)$ be uniformly bounded and equicontinuous.
+Let $X$ be compact, and let $(f_n)\subset C(X)$ be uniformly bounded and equicontinuous.
 Then there exists a subsequence $(f_{n_k})$ which converges uniformly on $X$.
 \end{lemma}
 
-\begin{proof}[Proof sketch of the lemma]
-Fix $m\in\mathbb{N}$. By equicontinuity, for each $x\in X$ there exists an open neighbourhood
+\begin{proof}
+For each $m\in\mathbb{N}$ and each $x\in X$, equicontinuity gives an open neighbourhood
 $U_{x,m}$ such that
 \[
 |f_n(y)-f_n(x)|<\frac1m
 \qquad \text{for all } y\in U_{x,m},\; n\in\mathbb{N}.
 \]
-Since $X$ is compact, finitely many of these sets cover $X$:
+By compactness, for each $m$ there exist points $x_1^{(m)},\dots,x_{r_m}^{(m)}$ such that
 \[
-X = U_{x_1,m}\cup \cdots \cup U_{x_{r_m},m}.
+X=\bigcup_{i=1}^{r_m} U_{x_i^{(m)},m}.
 \]
-Rename all points appearing in these finite covers as a sequence $(y_j)_{j\ge1}$.
-
-Because $(f_n(y_1))$ is bounded, it has a convergent subsequence.
-From that subsequence, extract one for which $(f_n(y_2))$ also converges, and continue.
-By the diagonal procedure, we obtain a subsequence $(f_{n_k})$ such that
-$(f_{n_k}(y_j))$ converges for every $j$.
-
-It remains to show that $(f_{n_k})$ is uniformly Cauchy. Let $\varepsilon>0$, and choose
-$m$ so large that $3/m<\varepsilon$. Since $X$ is covered by finitely many sets
-$U_{x_1,m},\dots,U_{x_{r_m},m}$, and since $(f_{n_k}(x_i))$ converges for each $i$,
-there exists $N$ such that for all $k,\ell\ge N$,
+Collect all these points into a countable set
 \[
-|f_{n_k}(x_i)-f_{n_\ell}(x_i)|<\frac1m
+A=\{a_1,a_2,a_3,\dots\}.
+\]
+
+Since $(f_n)$ is uniformly bounded, for each $j$ the sequence $(f_n(a_j))$ is bounded,
+hence admits a convergent subsequence. We now construct nested subsequences
+\[
+(f_n)\supset (f_n^{(1)})\supset (f_n^{(2)})\supset (f_n^{(3)})\supset \cdots
+\]
+such that $(f_n^{(k)}(a_k))$ converges for each $k$.
+
+We write these subsequences as rows:
+\[
+\begin{aligned}
+(f_n^{(1)}) &= (f_{n_1^{(1)}},\, f_{n_2^{(1)}},\, f_{n_3^{(1)}},\, \dots), \\
+(f_n^{(2)}) &= (f_{n_1^{(2)}},\, f_{n_2^{(2)}},\, f_{n_3^{(2)}},\, \dots), \\
+(f_n^{(3)}) &= (f_{n_1^{(3)}},\, f_{n_2^{(3)}},\, f_{n_3^{(3)}},\, \dots), \\
+&\ \vdots
+\end{aligned}
+\]
+where each row is a subsequence of the previous one.
+
+Define the diagonal subsequence by
+\[
+g_k := f_{n_k^{(k)}}.
+\]
+
+Fix $j$. For all $k\ge j$, the term $g_k$ lies in the subsequence $(f_n^{(j)})$,
+hence $(g_k(a_j))$ converges. Thus $(g_k(a_j))$ converges for every $a_j\in A$.
+
+We now show that $(g_k)$ is uniformly Cauchy. Let $\varepsilon>0$ and choose $m$ such that
+\[
+\frac{3}{m}<\varepsilon.
+\]
+From the finite cover
+\[
+X=\bigcup_{i=1}^{r_m} U_{x_i^{(m)},m},
+\]
+and since each $x_i^{(m)}\in A$, the sequences $(g_k(x_i^{(m)}))$ converge. Hence there exists $N$
+such that for all $k,\ell\ge N$,
+\[
+|g_k(x_i^{(m)})-g_\ell(x_i^{(m)})|<\frac1m
 \qquad \text{for } i=1,\dots,r_m.
 \]
-Now for any $x\in X$, choose $i$ such that $x\in U_{x_i,m}$. Then
-\[
-|f_{n_k}(x)-f_{n_\ell}(x)|
-\le |f_{n_k}(x)-f_{n_k}(x_i)|
- + |f_{n_k}(x_i)-f_{n_\ell}(x_i)|
- + |f_{n_\ell}(x_i)-f_{n_\ell}(x)|
-< \frac3m < \varepsilon.
-\]
-Hence $(f_{n_k})$ is uniformly Cauchy, and therefore converges uniformly on $X$.
-\end{proof}
 
+Now let $x\in X$. Choose $i$ such that $x\in U_{x_i^{(m)},m}$. Then
+\[
+|g_k(x)-g_\ell(x)|
+\le |g_k(x)-g_k(x_i^{(m)})|
++ |g_k(x_i^{(m)})-g_\ell(x_i^{(m)})|
++ |g_\ell(x_i^{(m)})-g_\ell(x)|
+< \frac1m+\frac1m+\frac1m
+= \frac{3}{m}
+< \varepsilon.
+\]
+Thus $(g_k)$ is uniformly Cauchy, hence converges uniformly on $X$.
+\end{proof}
 
 \begin{theorem}[Arzelà--Ascoli]
 Let $X$ be a compact topological space and let $\mathcal{F} \subset C(X)$.
-Then $\mathcal{F}$ is relatively compact in $(C(X),\|\cdot\|_\infty)$ if and only if
+Then $\overline{\mathcal{F}}$ is compact in $(C(X),\|\cdot\|_\infty)$ $\Leftrightarrow$
 $\mathcal{F}$ is uniformly bounded and equicontinuous.
 \end{theorem}
 
 \begin{proof}
 ($\Leftarrow$) Assume $\mathcal{F}$ is uniformly bounded and equicontinuous.
-Then by the lemma, every sequence in $\mathcal{F}$ has a uniformly convergent subsequence.
-Hence $\mathcal{F}$ is relatively compact.
+Then by the lemma, every sequence in $\mathcal{F}$ has a uniformly convergent subsequence, hence $\overline{\mathcal{F}}$ sequentially compact.
 
-($\Rightarrow$) Assume $\mathcal{F}$ is relatively compact. Then $\mathcal{F}$ is totally bounded.
+($\Rightarrow$) Assume $\mathcal{F}$ is precompact. Then $\mathcal{F}$ is totally bounded.
 
 Uniform boundedness:  
 For $\varepsilon=1$, there exist $f_1,\dots,f_n$ such that
@@ -875,9 +906,10 @@ such that
 \]
 If $f\in\mathcal{F}$, choose $k$ with $\|f-f_k\|_\infty<\varepsilon$. Then
 \[
-|f(y)-f(x)|<3\varepsilon \quad \forall y\in U.
+|f(y)-f(x)|
+\le |f(y)-f_k(y)| + |f_k(y)-f_k(x)| + |f_k(x)-f(x)|
+< \varepsilon + \varepsilon + \varepsilon = 3\varepsilon.
 \]
-Thus $\mathcal{F}$ is equicontinuous.
 \end{proof}
 
 \subsection*{Locally Compact}
