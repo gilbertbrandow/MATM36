@@ -1172,5 +1172,42 @@ X=\pi_2^{-1}(V(z_1))\cup\cdots\cup \pi_2^{-1}(V(z_k)).
 Since each $\pi_2^{-1}(V(z_j))$ can be covered by a finite number of sets in $\mathcal{C}$, and since the aggregate of these sets covers $X$, $\mathcal{C}$ has a finite subcover.
 \end{proof}
 
+\subsection*{Axiom of Choice \& Zorn's Lemma}
+
+\begin{definition}[Axiom of Choice]
+Let $\{U_\alpha\}_{\alpha \in A} \subset \mathcal{P}(X)$ be a family of non-empty sets indexed by some set $A$. Then there exists a function $f : A \to X$ such that $f(\alpha) \in U_\alpha$ for all $\alpha \in A$.
+\end{definition}
+
+\begin{definition}[Partially Ordered Set]
+A set $P$ together with a relation $\leq$ is called a \emph{partially ordered set} if for all $x,y,z \in P$:
+\begin{itemize}
+    \item $x \leq x$ (reflexivity),
+    \item if $x \leq y$ and $y \leq x$, then $x = y$ (antisymmetry),
+    \item if $x \leq y$ and $y \leq z$, then $x \leq z$ (transitivity).
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Totally Ordered Subset]
+A subset $C \subset P$ is called \emph{totally ordered} (or a \emph{chain}) if for all $x,y \in C$, either $x \leq y$ or $y \leq x$.
+\end{definition}
+
+\begin{definition}[Upper Bound]
+Let $C \subset P$. An element $u \in P$ is called an \emph{upper bound} of $C$ if
+\[
+x \leq u \quad \text{for all } x \in C.
+\]
+\end{definition}
+
+\begin{definition}[Maximal Element]
+An element $m \in P$ is called \emph{maximal} if there is no $x \in P$ such that
+\[
+m < x.
+\]
+\end{definition}
+
+\begin{lemma}[Zorn's Lemma]
+Let $P$ be a partially ordered set. If each totally ordered subset of $P$ has an upper bound, then $P$ has a maximal element.
+\end{lemma}
+
 
 \end{document}
