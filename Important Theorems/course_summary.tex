@@ -379,15 +379,12 @@ which contradicts
 Therefore $f$ is uniformly continuous.
 \end{proof}
 
-\begin{theorem}[Continuity and boundedness of linear operators]
+\begin{theorem}[Theorem 7.5]
 Let $X$ and $Y$ be normed spaces and let $T:X\to Y$ be linear. The following are equivalent:
 \begin{enumerate}[label=(\roman*)]
 \item $T$ is continuous;
 \item $T$ is continuous at $0$;
-\item $T$ is bounded, i.e.\ there exists $C>0$ such that
-\[
-\|T(x)\|\le C\|x\| \quad \text{for all } x\in X.
-\]
+\item $T$ is bounded, i.e.\ $\exists C>0 : \|T(x)\|\le C\|x\| \quad \text{for all } x\in X.$
 \end{enumerate}
 \end{theorem}
 
@@ -1403,21 +1400,120 @@ The various choices $x_\beta$ determine a point $x \in \prod_\alpha X_\alpha$, w
 
 \subsection*{Stone--Weierstrass Approximation Theorem}
 
-\begin{definition}[Lattice]
-A subset $L \subset C(X,\mathbb{R})$ is called a \emph{lattice} if for all $f,g \in L$, 
+\begin{definition}[Lattice operations]
+For functions $f,g \in C(X,\mathbb{R})$, define the \emph{join} and \emph{meet} by
 \[
-\max(f,g) \in L \quad \wedge  \quad \min(f,g) \in L
+(f \vee g)(x)=\max\{f(x),g(x)\}, \qquad (f \wedge g)(x)=\min\{f(x),g(x)\}.
 \]
-If $L$ is additionally a subspace (or subalgebra) of $C(X,\mathbb{R})$, it is called a \emph{sublattice}.
+A subset $L \subset C(X,\mathbb{R})$ is called a \emph{lattice} if for all $f,g \in L$,
+\[
+f \vee g \in L
+\qquad \text{and} \qquad
+f \wedge g \in L.
+\]
+If $L$ is also a subspace (or subalgebra) of $C(X,\mathbb{R})$, then $L$ is called a
+\emph{sublattice}.
 \end{definition}
 
 \begin{lemma}
-Let $X$ be a compact Hausdorff space with more than one point, and let $L$ be a closed sublattice of $C(X,\mathbb{R})$ with the following property: if $x$ and $y$ are distinct points of $X$ and $a$ and $b$ are two real numbers, then there exists a function $f \in L$ such that $f(x) = a$ and $f(y) = b$. Then $L = C(X,\mathbb{R})$.
+Let $X$ be a compact Hausdorff space with more than one point, and let $L$ be a closed
+sublattice of $C(X,\mathbb{R})$ with the following property: for any distinct $x,y \in X$ and any $a,b \in \mathbb{R}$, there exists $h \in L$ such that $h(x)=a, h(y)=b.$ Then $L=C(X,\mathbb{R})$.
 \end{lemma}
 
+\begin{proof}
+Let $f \in C(X,\mathbb{R})$ and let $\varepsilon>0$. Since $L$ is closed in
+$C(X,\mathbb{R})$, it is enough to find $g \in L$ such that
+\[
+f(z)-\varepsilon < g(z) < f(z)+\varepsilon \qquad \text{for all } z \in X.
+\]
+
+Fix $x \in X$. For each $y \neq x$, by hypothesis there exists $f_y \in L$ such that
+\[
+f_y(x)=f(x), \qquad f_y(y)=f(y).
+\]
+Consider the open set
+\[
+G_y=\{z \in X : f_y(z) < f(z)+\varepsilon\}.
+\]
+Since $x,y \in G_y$, the family $\{G_y : y \neq x\}$ is an open cover of $X$. By compactness,
+choose $y_1,\dots,y_n$ such that
+\[
+X=G_{y_1}\cup \cdots \cup G_{y_n}.
+\]
+Set
+\[
+g_x=f_{y_1}\wedge \cdots \wedge f_{y_n}.
+\]
+Because $L$ is a sublattice, $g_x \in L$. Also,
+\[
+g_x(x)=f(x),
+\]
+and for every $z \in X$ there exists some $j$ with $z \in G_{y_j}$, hence
+\[
+g_x(z)\le f_{y_j}(z)<f(z)+\varepsilon.
+\]
+
+Now define
+\[
+H_x=\{z \in X : g_x(z)>f(z)-\varepsilon\}.
+\]
+Since $g_x(x)=f(x)$, we have $x \in H_x$, so the sets $\{H_x : x \in X\}$ form an open
+cover of $X$. By compactness, choose $x_1,\dots,x_m$ such that
+\[
+X=H_{x_1}\cup \cdots \cup H_{x_m}.
+\]
+Finally set
+\[
+g=g_{x_1}\vee \cdots \vee g_{x_m}.
+\]
+Again $g \in L$. For any $z \in X$, since $z \in H_{x_i}$ for some $i$,
+\[
+g(z)\ge g_{x_i}(z)>f(z)-\varepsilon,
+\]
+while for every $i$ we already know $g_{x_i}(z)<f(z)+\varepsilon$, so
+\[
+g(z)<f(z)+\varepsilon.
+\]
+Thus
+\[
+f(z)-\varepsilon < g(z) < f(z)+\varepsilon \qquad \text{for all } z \in X.
+\]
+Hence $\|f-g\|_\infty<\varepsilon$. Since $L$ is closed and $f$ can be uniformly approximated
+by elements of $L$, it follows that $f \in L$. Therefore $L=C(X,\mathbb{R})$.
+\end{proof}
+
 \begin{lemma}
-Let $X$ be an arbitrary topological space. Then every closed subalgebra of $C(X,\mathbb{R})$ is also a closed sublattice of $C(X,\mathbb{R})$.
+Let $X$ be a topological space. Then every closed subalgebra $A \subset C(X,\mathbb{R})$
+is also a closed sublattice of $C(X,\mathbb{R})$.
 \end{lemma}
+
+\begin{proof}
+It suffices to show that if $f \in A$, then $|f| \in A$. Indeed, for $f,g \in A$,
+the lattice operations can be written as
+\[
+f \vee g = \frac{f+g+|f-g|}{2}, \qquad
+f \wedge g = \frac{f+g-|f-g|}{2}.
+\]
+Since $A$ is a subalgebra, it is closed under addition and scalar multiplication,
+so if $|f-g| \in A$, then $f \vee g, f \wedge g \in A$. Thus it remains to prove that $|f| \in A$ for every $f \in A$.
+
+Let $f \in A$ and $\varepsilon>0$. Since $f$ is continuous and $X$ is arbitrary,
+the function $|t|$ on the interval $[-\|f\|_\infty,\|f\|_\infty]$ can be uniformly
+approximated by polynomials. Hence there exists a polynomial $p$ such that
+\[
+\bigl||t|-p(t)\bigr|<\varepsilon \quad \text{for all } t \in [-\|f\|_\infty,\|f\|_\infty].
+\]
+By adjusting the constant term, we may assume $p(0)=0$.
+
+Since $A$ is an algebra, $p(f) \in A$. Moreover, for all $x \in X$,
+\[
+\bigl||f(x)| - p(f(x))\bigr| < \varepsilon,
+\]
+so $\|\,|f| - p(f)\,\|_\infty < \varepsilon$. Since $A$ is closed in $C(X,\mathbb{R})$, it follows that $|f| \in A$.
+
+Therefore $A$ is closed under $|\cdot|$, and hence under $\vee$ and $\wedge$,
+so $A$ is a sublattice.
+\end{proof}
 
 \begin{theorem}[Real Stone--Weierstrass Theorem]
 Let $X$ be a compact Hausdorff space, and let $A$ be a closed subalgebra of $C(X,\mathbb{R})$ which separates points and contains a non-zero constant function. Then $A = C(X,\mathbb{R})$.
@@ -1438,24 +1534,74 @@ Then $f \in A$ and clearly satisfies $f(x) = a$ and $f(y) = b$. Hence $A = C(X,\
 \end{proof}
 
 \begin{theorem}[Complex Stone--Weierstrass Theorem]
-Let $X$ be a compact Hausdorff space, and let $A$ be a closed subalgebra of $C(X,\mathbb{C})$ which separates points, contains a non-zero constant function, and contains the conjugate of each of its functions. Then $A = C(X,\mathbb{C})$.
+Let $X$ be a compact Hausdorff space, and let $A$ be a closed subalgebra of $C(X,\mathbb{C})$ which separates points, contains a non-zero constant function, and is closed under complex conjugation, i.e. $f \in A \implies \overline{f} \in A.$
+Then $A = C(X,\mathbb{C})$.
 \end{theorem}
 
-\begin{proof}[Proof outline]
-Let $B$ be the set of real-valued functions in $A$. Then $B$ is a closed subalgebra of $C(X,\mathbb{R})$.
-
-If $f \in A$, then its real and imaginary parts satisfy
+\begin{proof}
+Let
 \[
-R(f), I(f) \in C(X,\mathbb{R}),
+B:=\{f \in A : f(X)\subset \mathbb{R}\}
 \]
-and since $A$ contains conjugates and is an algebra, one shows that $R(f), I(f) \in B$. Thus $A$ is generated by $B$, and it suffices to show that $B = C(X,\mathbb{R})$.
+be the set of real-valued functions in $A$. We claim that $B$ is a closed subalgebra of
+$C(X,\mathbb{R})$.
 
-\begin{itemize}
-    \item $B$ separates points (since $A$ does),
-    \item $B$ contains a non-zero constant function.
-\end{itemize}
+First, if $f,g \in B$ and $\alpha \in \mathbb{R}$, then $f+g$, $\alpha f$, and $fg$ are again
+real-valued and belong to $A$ since $A$ is a subalgebra. Hence $B$ is a subalgebra of
+$C(X,\mathbb{R})$.
 
-By the real Stone--Weierstrass theorem, $B = C(X,\mathbb{R})$, and therefore $A = C(X,\mathbb{C})$.
+Also, $B$ is closed in $C(X,\mathbb{R})$: if $(f_n)$ is a sequence in $B$ converging
+uniformly to $f \in C(X,\mathbb{R})$, then $f_n \to f$ also in $C(X,\mathbb{C})$.
+Since $A$ is closed in $C(X,\mathbb{C})$ and each $f_n \in A$, it follows that $f \in A$.
+As $f$ is real-valued, we get $f \in B$.
+
+Next we show that $B$ separates points. Let $x,y \in X$ with $x \neq y$. Since $A$
+separates points, there exists $f \in A$ such that
+\[
+f(x)\neq f(y).
+\]
+Write
+\[
+f=u+iv,
+\]
+where
+\[
+u=\Re f=\frac{f+\overline f}{2},
+\qquad
+v=\Im f=\frac{f-\overline f}{2i}.
+\]
+Because $A$ is closed under conjugation and is a subalgebra, we have $u,v \in A$.
+Since $u$ and $v$ are real-valued, actually $u,v \in B$.
+
+Now if both $u(x)=u(y)$ and $v(x)=v(y)$ held, then
+\[
+f(x)=u(x)+iv(x)=u(y)+iv(y)=f(y),
+\]
+a contradiction. Hence either $u(x)\neq u(y)$ or $v(x)\neq v(y)$, so $B$ separates points.
+
+Since $A$ contains a non-zero constant function, say $c \neq 0$, and is closed under
+conjugation, it also contains $\overline c$. Therefore
+\[
+\frac{c+\overline c}{2}=\Re(c)
+\qquad \text{and} \qquad
+\frac{c-\overline c}{2i}=\Im(c)
+\]
+belong to $B$, and at least one of them is non-zero. Thus $B$ contains a non-zero real
+constant function.
+
+Therefore $B$ is a closed subalgebra of $C(X,\mathbb{R})$ which separates points and
+contains a non-zero constant function. By the real Stone--Weierstrass theorem,
+\[
+B=C(X,\mathbb{R}).
+\]
+
+It remains to show that $A=C(X,\mathbb{C})$. Let $f \in C(X,\mathbb{C})$. Write
+\[
+f=u+iv,
+\]
+where $u,v \in C(X,\mathbb{R})$. Since $B=C(X,\mathbb{R})$, we have $u,v \in B \subset A$.
+Because $A$ is closed under multiplication by complex scalars, $iv \in A,$ and hence $f=u+iv \in A.$
+Thus every $f \in C(X,\mathbb{C})$ belongs to $A \implies A=C(X,\mathbb{C}).$
 \end{proof}
 
 \end{document}
