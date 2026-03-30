@@ -1360,6 +1360,27 @@ m < x.
 Let $P$ be a partially ordered set. If each totally ordered subset of $P$ has an upper bound, then $P$ has a maximal element.
 \end{lemma}
 
+\begin{remark}[Interpretation and Applications of Zorn's Lemma]
+Zorn's Lemma is a fundamental existence principle. It allows one to construct
+\emph{maximal objects} in situations where a direct construction is not possible.
+
+The typical strategy is:
+\begin{enumerate}
+    \item Define a partially ordered set of ``partial objects'' (e.g.\ partial functions,
+    partial covers, or substructures),
+    \item Show that every chain has an upper bound (i.e.\ partial objects can be extended),
+    \item Conclude the existence of a maximal element.
+\end{enumerate}
+
+In this course, Zorn's Lemma appears in the proof of Tychonoff's Theorem,
+where it is used to construct a maximal open cover without a finite subcover,
+leading to a contradiction.
+
+More generally, Zorn's Lemma is equivalent to the Axiom of Choice and is widely used
+throughout mathematics, for example in proving the existence of bases of vector spaces,
+maximal ideals, and extensions of partial functions.
+\end{remark}
+
 \subsection*{Infinite Product Spaces}
 
 \begin{theorem}[12.3, Alexander Subbase Theorem]
