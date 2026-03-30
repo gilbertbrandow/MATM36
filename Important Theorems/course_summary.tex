@@ -1422,15 +1422,56 @@ Any product of compact spaces is compact.
 \end{theorem}
 
 \begin{proof}
-Let $X=\prod_{\alpha} X_\alpha$, where each $X_\alpha$ is compact. Let $\mathcal{S}$ be a family of subbasic sets of the form
+Let
 \[
-\pi_\alpha^{-1}(U_\alpha),
+X=\prod_{\alpha\in A} X_\alpha,
 \]
-where $U_\alpha$ is an open subset of $X_\alpha$. Suppose that no finite subfamily of $\mathcal{S}$ covers $X$. In view of the Alexander Subbase Theorem, it suffices to show that $\mathcal{S}$ does not cover $X$.
+where each $X_\alpha$ is compact. Let $\mathcal{S}$ be a collection of subbasic open sets in
+the product topology on $X$ such that no finite subcollection of $\mathcal{S}$ covers $X$.
+By Alexander's Subbase Theorem, it suffices to show that $\mathcal{S}$ does not cover $X$.
 
-Fix an index $\beta$ and consider the subbasic sets in $\mathcal{S}$ of the form $\pi_\beta^{-1}(V)$, where $V$ is an open subset of $X_\beta$. The aggregate of such open sets $V$ cannot cover $X_\beta$. Otherwise we could extract a finite subcover $\{V_1,\dots,V_m\}$ of $X_\beta$, and the corresponding sets $\pi_\beta^{-1}(V_1),\dots,\pi_\beta^{-1}(V_m)$ would cover $X$, contradicting our hypothesis on $\mathcal{S}$. Choose a point $x_\beta \in X_\beta$ such that $x_\beta$ is not included in the union of the $V$’s.
+Each element of $\mathcal{S}$ is of the form
+\[
+\pi_\alpha^{-1}(U),
+\]
+for some $\alpha\in A$ and some open set $U\subseteq X_\alpha$. Now fix $\beta\in A$, and define
+\[
+\mathcal{U}_\beta
+=
+\{\,U\subseteq X_\beta : U \text{ is open in } X_\beta
+\text{ and } \pi_\beta^{-1}(U)\in\mathcal{S}\,\}.
+\]
+We claim that $\mathcal{U}_\beta$ does not cover $X_\beta$. For otherwise,
+$\mathcal{U}_\beta$ would be an open cover of $X_\beta$, and since $X_\beta$ is compact,
+there would exist $U_1,\dots,U_n\in\mathcal{U}_\beta$ such that
+\[
+X_\beta=U_1\cup\cdots\cup U_n.
+\]
+But then
+\[
+X=\pi_\beta^{-1}(U_1)\cup\cdots\cup \pi_\beta^{-1}(U_n),
+\]
+which is a finite cover of $X$ by members of $\mathcal{S}$, contradicting the choice of
+$\mathcal{S}$. Hence $\mathcal{U}_\beta$ does not cover $X_\beta$, so we may choose
+\[
+x_\beta\in X_\beta\setminus \bigcup_{U\in\mathcal{U}_\beta} U.
+\]
+Doing this for each $\beta\in A$, we obtain a point
+\[
+x=(x_\alpha)_{\alpha\in A}\in \prod_{\alpha\in A} X_\alpha.
+\]
 
-The various choices $x_\beta$ determine a point $x \in \prod_\alpha X_\alpha$, which is evidently not included in any of the sets in $\mathcal{S}$.
+We show that $x\notin S$ for every $S\in\mathcal{S}$. Indeed, if
+\[
+S=\pi_\alpha^{-1}(U)
+\]
+for some $\alpha\in A$ and open $U\subseteq X_\alpha$, then $U\in\mathcal{U}_\alpha$, so
+$x_\alpha\notin U$ by construction. Therefore
+\[
+x\notin \pi_\alpha^{-1}(U)=S.
+\]
+Thus $x$ is not contained in any member of $\mathcal{S}$, and so $\mathcal{S}$ does not
+cover $X$.
 \end{proof}
 
 \subsection*{Stone--Weierstrass Approximation Theorem}
