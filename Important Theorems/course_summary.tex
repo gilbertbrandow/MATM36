@@ -266,21 +266,42 @@ So the sequence $(y_j)$ has no Cauchy subsequence, hence no convergent subsequen
 \medskip
 
 \noindent\textbf{Implication $(iii)\Rightarrow(ii)$.}
-Assume $X$ is complete and totally bounded. Let $(x_j)$ be a sequence in $X$. We sketch why $(x_j)$ has a convergent subsequence.
+Assume $X$ is complete and totally bounded. Let $(x_j)$ be a sequence in $X$.
 
-The key intermediate result is:
+We first show that $(x_j)$ has a Cauchy subsequence.
 
-\begin{quote}
-In a totally bounded metric space, every sequence has a Cauchy subsequence.
-\end{quote}
+For each $k \in \mathbb{N}$, since $X$ is totally bounded, there exist finitely many balls of radius $1/k$ that cover $X$. In particular, there exists a finite collection of balls
+\[
+B(x_{k,1},1/k), \dots, B(x_{k,N_k},1/k)
+\]
+such that
+\[
+X = \bigcup_{i=1}^{N_k} B(x_{k,i},1/k).
+\]
 
-To prove this, for each $k\ge1$ cover $X$ by finitely many balls of radius $1/k$. Since there are infinitely many terms of the sequence and only finitely many such balls, one ball of radius $1$ contains infinitely many terms; pass to that subsequence. Then one ball of radius $1/2$ contains infinitely many terms of this subsequence; pass again. Continue inductively. This gives nested subsequences, and taking the diagonal subsequence produces a sequence $(y_n)$ such that for every $k$, all sufficiently large terms of $(y_n)$ lie in a ball of radius $1/k$. Hence $(y_n)$ is Cauchy.
+We now construct a sequence of nested subsequences. Since the sequence $(x_j)$ has infinitely many terms and only finitely many balls of radius $1$, there exists a ball $B_1$ of radius $1$ that contains infinitely many terms of $(x_j)$. Let $(x_j^{(1)})$ be the subsequence consisting of all such terms.
 
-Since $X$ is complete, every Cauchy sequence converges. Therefore $(x_j)$ has a convergent subsequence.
+Next, consider the covering by balls of radius $1/2$. Since $(x_j^{(1)})$ is still infinite, there exists a ball $B_2$ of radius $1/2$ containing infinitely many terms of $(x_j^{(1)})$. Let $(x_j^{(2)})$ be this subsequence.
 
-\medskip
+Proceeding inductively, for each $k$ we obtain a subsequence $(x_j^{(k)})$ of $(x_j^{(k-1)})$ such that all its terms lie in some ball $B_k$ of radius $1/k$.
 
-\noindent\textbf{Comment.} This is the most technical part: total boundedness gives finer and finer finite covers, and the diagonal procedure forces the chosen subsequence to become Cauchy.
+Thus we obtain nested subsequences
+\[
+(x_j) \supset (x_j^{(1)}) \supset (x_j^{(2)}) \supset \cdots.
+\]
+
+Now define a new sequence $(y_n)$ by taking the diagonal subsequence:
+\[
+y_n := x_n^{(n)}.
+\]
+
+We claim that $(y_n)$ is Cauchy. Let $\varepsilon > 0$. Choose $k \in \mathbb{N}$ such that $1/k < \varepsilon$. By construction, all terms of $(x_j^{(k)})$ lie in a ball of radius $1/k$. For $n \ge k$, we have $y_n \in (x_j^{(k)})$, so $y_n$ lies in this ball. Hence for all $n,m \ge k$,
+\[
+d(y_n,y_m) < \frac{2}{k} < 2\varepsilon.
+\]
+Thus $(y_n)$ is Cauchy.
+
+Since $X$ is complete, $(y_n)$ converges in $X$. Therefore $(x_j)$ has a convergent subsequence.
 
 \medskip
 
@@ -309,13 +330,6 @@ hence in particular $x_{m_k}\notin U_r$, a contradiction. Therefore some finite 
 
 \noindent\textbf{Comment.} The contradiction comes from choosing points left out by larger and larger finite parts of the cover, then using sequential compactness to force a limit point into one of the open sets.
 
-\medskip
-
-We have proved
-\[
-(i)\Rightarrow(ii)\Rightarrow(iii)\Rightarrow(ii)\Rightarrow(i),
-\]
-so the three conditions are equivalent.
 \end{proof}
 
 \begin{theorem}[Heine--Borel Theorem]
